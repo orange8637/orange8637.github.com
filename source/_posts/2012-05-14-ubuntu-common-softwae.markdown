@@ -3,7 +3,7 @@ layout: post
 title: "ubuntu 12.04 common softwae"
 date: 2012-05-14 13:47
 comments: true
-categories: 
+categories: [linux]
 ---
 
     

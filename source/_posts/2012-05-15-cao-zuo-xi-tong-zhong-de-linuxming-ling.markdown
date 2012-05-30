@@ -3,7 +3,7 @@ layout: post
 title: "操作系统实验中的linux命令"
 date: 2012-05-15 16:10
 comments: true
-categories: 
+categories: [linux]
 ---
 
 首先不推荐中大信科院自己的操作系统实验课,跟着老师学完，你只是windows里点点鼠标更熟练了。强烈推荐这份[南大操作系统实验](http://cslab.nju.edu.cn/opsystem/#MainPage),我也正在看，欢迎交流[@twitter](https://twitter.com/#!/bigbiepineapple)(求粉哟)
