@@ -4,7 +4,7 @@
   <title><![CDATA[Category: thoughs | SYSU-pineapple's blog]]></title>
   <link href="http://orange8637.github.com/blog/categories/thoughs/atom.xml" rel="self"/>
   <link href="http://orange8637.github.com/"/>
-  <updated>2012-05-31T01:23:01+08:00</updated>
+  <updated>2012-05-31T01:26:45+08:00</updated>
   <id>http://orange8637.github.com/</id>
   <author>
     <name><![CDATA[姜晨]]></name>
@@ -18,27 +18,64 @@
     <link href="http://orange8637.github.com/blog/2012/05/30/bu-zhe-teng/"/>
     <updated>2012-05-30T22:24:00+08:00</updated>
     <id>http://orange8637.github.com/blog/2012/05/30/bu-zhe-teng</id>
-    <content type="html"><![CDATA[<p>```cpp hello</p>
-
-<h1>include<iostream></h1>
+    <content type="html"><![CDATA[<p>```cpp hanoi.cpp
+/<em>
+* Filename: hanoi.cpp
+* Last modified: 2012-05-30 18:47
+* Author: Chen Jiang(姜晨) -- orange8637@gmail.com
+* Description: 汉诺塔问题
+</em>/</p>
 
 <h1>include&lt;stdio.h></h1>
 
 <p>using namespace std;</p>
 
-<p>int main()
+<p>void move(int n, char from, char to, char aux)
 {</p>
 
-<pre><code>    int a,b;
-    scanf("%d%d",&amp;a,&amp;b);
-    printf("%d",a+b);
-    return 0;
+<pre><code>if(n==1)
+{
+    printf("move %d from %c to %c\n", n, from ,to);
+}
+else
+{
+    move(n-1, from, aux, to);
+    printf("move %d from %c to %c\n", n, from, to, aux);
+    move(n-1, aux, to, from);
+}
 </code></pre>
 
 <p>}
-```</p>
+int main()
+{</p>
 
-<p><code>
+<pre><code>    int n;
+    scanf("%d",&amp;n);
+    move(n,'a','c','b');
+
+return 0;
+</code></pre>
+
+<p>}</p>
+
+<p>```bash shell.sh</p>
+
+<h1>!/bin/bash</h1>
+
+<h1>Filename: shell.sh</h1>
+
+<h1>Author: 姜晨 - orange8637@gmail.com</h1>
+
+<h1>Last modified: 2012-05-26 20:47</h1>
+
+<h1>Company: SYSU</h1>
+
+<h1>Description:</h1>
+
+<p>echo "have $#"
+echo "all $@"
+echo "1 $1x2x$2"
+<code>
 $sudo apt-get install ruby
 $sudo su
 </code></p>
