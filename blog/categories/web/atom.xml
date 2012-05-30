@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Category: thoughs | SYSU-pineapple's blog]]></title>
-  <link href="http://orange8637.github.com/blog/categories/thoughs/atom.xml" rel="self"/>
+  <title><![CDATA[Category: web | SYSU-pineapple's blog]]></title>
+  <link href="http://orange8637.github.com/blog/categories/web/atom.xml" rel="self"/>
   <link href="http://orange8637.github.com/"/>
-  <updated>2012-05-31T01:28:49+08:00</updated>
+  <updated>2012-05-31T01:44:14+08:00</updated>
   <id>http://orange8637.github.com/</id>
   <author>
     <name><![CDATA[姜晨]]></name>
@@ -18,65 +18,10 @@
     <link href="http://orange8637.github.com/blog/2012/05/30/bu-zhe-teng/"/>
     <updated>2012-05-30T22:24:00+08:00</updated>
     <id>http://orange8637.github.com/blog/2012/05/30/bu-zhe-teng</id>
-    <content type="html"><![CDATA[<p>```cpp hanoi.cpp
-/<em>
-* Filename: hanoi.cpp
-* Last modified: 2012-05-30 18:47
-* Author: Chen Jiang(姜晨) -- orange8637@gmail.com
-* Description: 汉诺塔问题
-</em>/</p>
-
-<h1>include&lt;stdio.h></h1>
-
-<p>using namespace std;
-void move(int n, char from, char to, char aux)
-{</p>
-
-<pre><code>if(n==1)
-{
-    printf("move %d from %c to %c\n", n, from ,to);
-}
-else
-{
-    move(n-1, from, aux, to);
-    printf("move %d from %c to %c\n", n, from, to, aux);
-    move(n-1, aux, to, from);
-}
-</code></pre>
-
-<p>}
-int main()
-{</p>
-
-<pre><code>    int n;
-    scanf("%d",&amp;n);
-    move(n,'a','c','b');
-
-return 0;
-</code></pre>
-
-<p>}</p>
-
-<p>```bash shell.sh</p>
-
-<h1>!/bin/bash</h1>
-
-<h1>Filename: shell.sh</h1>
-
-<h1>Author: 姜晨 - orange8637@gmail.com</h1>
-
-<h1>Last modified: 2012-05-26 20:47</h1>
-
-<h1>Company: SYSU</h1>
-
-<h1>Description:</h1>
-
-<p>echo "have $#"
-echo "all $@"
-echo "1 $1x2x$2"
-```</p>
-
-<p>```bash 目录树
+    <content type="html"><![CDATA[<p>fuck xxx!
+手贱把上次配置好的博客全删除了，而且是github上面的也删除了，无奈只得重新配置一次。
+先分析一下目录树
+```bash 目录树
 .
 ├── _deploy
 │   ├── about
@@ -131,7 +76,7 @@ echo "1 $1x2x$2"
 │   │   ├── archives
 │   │   └── categories
 │   │       ├── linux
-│   │       └── thoughs
+│   │       └── web
 │   ├── images
 │   ├── javascripts
 │   │   ├── asides
@@ -176,6 +121,46 @@ echo "1 $1x2x$2"
 </code></pre>
 
 <p>```</p>
+
+<p>```cpp hanoi.cpp
+/<em>
+* Filename: hanoi.cpp
+* Last modified: 2012-05-30 18:47
+* Author: Chen Jiang(姜晨) -- orange8637@gmail.com
+* Description: 汉诺塔问题
+</em>/</p>
+
+<h1>include&lt;stdio.h></h1>
+
+<p>using namespace std;
+void move(int n, char from, char to, char aux)
+{</p>
+
+<pre><code>if(n==1)
+{
+    printf("move %d from %c to %c\n", n, from ,to);
+}
+else
+{
+    move(n-1, from, aux, to);
+    printf("move %d from %c to %c\n", n, from, to, aux);
+    move(n-1, aux, to, from);
+}
+</code></pre>
+
+<p>}
+int main()
+{</p>
+
+<pre><code>    int n;
+    scanf("%d",&amp;n);
+    move(n,'a','c','b');
+
+return 0;
+</code></pre>
+
+<p>}
+```</p>
 ]]></content>
   </entry>
   
