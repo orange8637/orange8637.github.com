@@ -4,7 +4,7 @@
   <title><![CDATA[Category: thoughs | SYSU-pineapple's blog]]></title>
   <link href="http://orange8637.github.com/blog/categories/thoughs/atom.xml" rel="self"/>
   <link href="http://orange8637.github.com/"/>
-  <updated>2012-05-31T01:04:32+08:00</updated>
+  <updated>2012-05-31T01:23:01+08:00</updated>
   <id>http://orange8637.github.com/</id>
   <author>
     <name><![CDATA[姜晨]]></name>
@@ -30,9 +30,9 @@
 {</p>
 
 <pre><code>    int a,b;
-        scanf("%d%d",&amp;a,&amp;b);
-            printf("%d",a+b);
-                return 0;
+    scanf("%d%d",&amp;a,&amp;b);
+    printf("%d",a+b);
+    return 0;
 </code></pre>
 
 <p>}
@@ -42,6 +42,109 @@
 $sudo apt-get install ruby
 $sudo su
 </code></p>
+
+<h3>octopress directory tree</h3>
+
+<p>```bash 目录树
+.
+├── _deploy
+│   ├── about
+│   ├── assets
+│   │   └── jwplayer
+│   │       └── glow
+│   │           ├── controlbar
+│   │           ├── display
+│   │           ├── dock
+│   │           ├── playlist
+│   │           └── sharing
+│   ├── blog
+│   │   ├── 2012
+│   │   │   └── 05
+│   │   │       ├── 14
+│   │   │       │   └── ubuntu-common-softwae
+│   │   │       ├── 15
+│   │   │       │   └── cao-zuo-xi-tong-zhong-de-linuxming-ling
+│   │   │       └── 30
+│   │   │           └── bu-zhe-teng
+│   │   ├── archives
+│   │   └── categories
+│   │       ├── linux
+│   │       └── thoughs
+│   ├── images
+│   ├── javascripts
+│   │   ├── asides
+│   │   └── libs
+│   └── stylesheets
+│       ├── bootstrap
+│       └── syntax
+├── plugins
+├── public
+│   ├── about
+│   ├── assets
+│   │   └── jwplayer
+│   │       └── glow
+│   │           ├── controlbar
+│   │           ├── display
+│   │           ├── dock
+│   │           ├── playlist
+│   │           └── sharing
+│   ├── blog
+│   │   ├── 2012
+│   │   │   └── 05
+│   │   │       ├── 14
+│   │   │       │   └── ubuntu-common-softwae
+│   │   │       ├── 15
+│   │   │       │   └── cao-zuo-xi-tong-zhong-de-linuxming-ling
+│   │   │       └── 30
+│   │   │           └── bu-zhe-teng
+│   │   ├── archives
+│   │   └── categories
+│   │       ├── linux
+│   │       └── thoughs
+│   ├── images
+│   ├── javascripts
+│   │   ├── asides
+│   │   └── libs
+│   └── stylesheets
+│       ├── bootstrap
+│       └── syntax
+├── sass
+│   ├── base
+│   ├── bootstrap
+│   ├── custom
+│   ├── partials
+│   │   └── sidebar
+│   └── syntax
+└── source</p>
+
+<pre><code>├── about
+├── assets
+│   └── jwplayer
+│       └── glow
+│           ├── controlbar
+│           ├── display
+│           ├── dock
+│           ├── playlist
+│           └── sharing
+├── blog
+│   └── archives
+├── images
+├── _includes
+│   ├── asides
+│   ├── custom
+│   │   └── asides
+│   └── post
+├── javascripts
+│   ├── asides
+│   └── libs
+├── _layouts
+├── _posts
+└── stylesheets
+    ├── bootstrap
+    └── syntax
+</code></pre>
+
+<p>```</p>
 ]]></content>
   </entry>
   

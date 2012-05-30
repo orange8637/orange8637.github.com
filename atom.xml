@@ -4,7 +4,7 @@
   <title><![CDATA[SYSU-pineapple's blog]]></title>
   <link href="http://orange8637.github.com/atom.xml" rel="self"/>
   <link href="http://orange8637.github.com/"/>
-  <updated>2012-05-31T01:04:32+08:00</updated>
+  <updated>2012-05-31T01:23:01+08:00</updated>
   <id>http://orange8637.github.com/</id>
   <author>
     <name><![CDATA[姜晨]]></name>
@@ -36,9 +36,9 @@
 </span><span class='line'><span class="kt">int</span> <span class="n">main</span><span class="p">()</span>
 </span><span class='line'><span class="p">{</span>
 </span><span class='line'>      <span class="kt">int</span> <span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">;</span>
-</span><span class='line'>          <span class="n">scanf</span><span class="p">(</span><span class="s">&quot;%d%d&quot;</span><span class="p">,</span><span class="o">&amp;</span><span class="n">a</span><span class="p">,</span><span class="o">&amp;</span><span class="n">b</span><span class="p">);</span>
-</span><span class='line'>              <span class="n">printf</span><span class="p">(</span><span class="s">&quot;%d&quot;</span><span class="p">,</span><span class="n">a</span><span class="o">+</span><span class="n">b</span><span class="p">);</span>
-</span><span class='line'>                  <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+</span><span class='line'>      <span class="n">scanf</span><span class="p">(</span><span class="s">&quot;%d%d&quot;</span><span class="p">,</span><span class="o">&amp;</span><span class="n">a</span><span class="p">,</span><span class="o">&amp;</span><span class="n">b</span><span class="p">);</span>
+</span><span class='line'>      <span class="n">printf</span><span class="p">(</span><span class="s">&quot;%d&quot;</span><span class="p">,</span><span class="n">a</span><span class="o">+</span><span class="n">b</span><span class="p">);</span>
+</span><span class='line'>      <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
 </span><span class='line'><span class="p">}</span>
 </span></code></pre></td></tr></table></div></figure>
 
@@ -50,6 +50,203 @@
 </pre></td><td class='code'><pre><code class='cpp'><span class='line'><span class="err">$</span><span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">install</span> <span class="n">ruby</span>
 </span><span class='line'><span class="err">$</span><span class="n">sudo</span> <span class="n">su</span>
 </span></code></pre></td></tr></table></div></figure>
+
+
+<h3>octopress directory tree</h3>
+
+<figure class='code'><figcaption><span>目录树</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+<span class='line-number'>32</span>
+<span class='line-number'>33</span>
+<span class='line-number'>34</span>
+<span class='line-number'>35</span>
+<span class='line-number'>36</span>
+<span class='line-number'>37</span>
+<span class='line-number'>38</span>
+<span class='line-number'>39</span>
+<span class='line-number'>40</span>
+<span class='line-number'>41</span>
+<span class='line-number'>42</span>
+<span class='line-number'>43</span>
+<span class='line-number'>44</span>
+<span class='line-number'>45</span>
+<span class='line-number'>46</span>
+<span class='line-number'>47</span>
+<span class='line-number'>48</span>
+<span class='line-number'>49</span>
+<span class='line-number'>50</span>
+<span class='line-number'>51</span>
+<span class='line-number'>52</span>
+<span class='line-number'>53</span>
+<span class='line-number'>54</span>
+<span class='line-number'>55</span>
+<span class='line-number'>56</span>
+<span class='line-number'>57</span>
+<span class='line-number'>58</span>
+<span class='line-number'>59</span>
+<span class='line-number'>60</span>
+<span class='line-number'>61</span>
+<span class='line-number'>62</span>
+<span class='line-number'>63</span>
+<span class='line-number'>64</span>
+<span class='line-number'>65</span>
+<span class='line-number'>66</span>
+<span class='line-number'>67</span>
+<span class='line-number'>68</span>
+<span class='line-number'>69</span>
+<span class='line-number'>70</span>
+<span class='line-number'>71</span>
+<span class='line-number'>72</span>
+<span class='line-number'>73</span>
+<span class='line-number'>74</span>
+<span class='line-number'>75</span>
+<span class='line-number'>76</span>
+<span class='line-number'>77</span>
+<span class='line-number'>78</span>
+<span class='line-number'>79</span>
+<span class='line-number'>80</span>
+<span class='line-number'>81</span>
+<span class='line-number'>82</span>
+<span class='line-number'>83</span>
+<span class='line-number'>84</span>
+<span class='line-number'>85</span>
+<span class='line-number'>86</span>
+<span class='line-number'>87</span>
+<span class='line-number'>88</span>
+<span class='line-number'>89</span>
+<span class='line-number'>90</span>
+<span class='line-number'>91</span>
+<span class='line-number'>92</span>
+<span class='line-number'>93</span>
+<span class='line-number'>94</span>
+<span class='line-number'>95</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>.
+</span><span class='line'>├── _deploy
+</span><span class='line'>│   ├── about
+</span><span class='line'>│   ├── assets
+</span><span class='line'>│   │   └── jwplayer
+</span><span class='line'>│   │       └── glow
+</span><span class='line'>│   │           ├── controlbar
+</span><span class='line'>│   │           ├── display
+</span><span class='line'>│   │           ├── dock
+</span><span class='line'>│   │           ├── playlist
+</span><span class='line'>│   │           └── sharing
+</span><span class='line'>│   ├── blog
+</span><span class='line'>│   │   ├── 2012
+</span><span class='line'>│   │   │   └── 05
+</span><span class='line'>│   │   │       ├── 14
+</span><span class='line'>│   │   │       │   └── ubuntu-common-softwae
+</span><span class='line'>│   │   │       ├── 15
+</span><span class='line'>│   │   │       │   └── cao-zuo-xi-tong-zhong-de-linuxming-ling
+</span><span class='line'>│   │   │       └── 30
+</span><span class='line'>│   │   │           └── bu-zhe-teng
+</span><span class='line'>│   │   ├── archives
+</span><span class='line'>│   │   └── categories
+</span><span class='line'>│   │       ├── linux
+</span><span class='line'>│   │       └── thoughs
+</span><span class='line'>│   ├── images
+</span><span class='line'>│   ├── javascripts
+</span><span class='line'>│   │   ├── asides
+</span><span class='line'>│   │   └── libs
+</span><span class='line'>│   └── stylesheets
+</span><span class='line'>│       ├── bootstrap
+</span><span class='line'>│       └── syntax
+</span><span class='line'>├── plugins
+</span><span class='line'>├── public
+</span><span class='line'>│   ├── about
+</span><span class='line'>│   ├── assets
+</span><span class='line'>│   │   └── jwplayer
+</span><span class='line'>│   │       └── glow
+</span><span class='line'>│   │           ├── controlbar
+</span><span class='line'>│   │           ├── display
+</span><span class='line'>│   │           ├── dock
+</span><span class='line'>│   │           ├── playlist
+</span><span class='line'>│   │           └── sharing
+</span><span class='line'>│   ├── blog
+</span><span class='line'>│   │   ├── 2012
+</span><span class='line'>│   │   │   └── 05
+</span><span class='line'>│   │   │       ├── 14
+</span><span class='line'>│   │   │       │   └── ubuntu-common-softwae
+</span><span class='line'>│   │   │       ├── 15
+</span><span class='line'>│   │   │       │   └── cao-zuo-xi-tong-zhong-de-linuxming-ling
+</span><span class='line'>│   │   │       └── 30
+</span><span class='line'>│   │   │           └── bu-zhe-teng
+</span><span class='line'>│   │   ├── archives
+</span><span class='line'>│   │   └── categories
+</span><span class='line'>│   │       ├── linux
+</span><span class='line'>│   │       └── thoughs
+</span><span class='line'>│   ├── images
+</span><span class='line'>│   ├── javascripts
+</span><span class='line'>│   │   ├── asides
+</span><span class='line'>│   │   └── libs
+</span><span class='line'>│   └── stylesheets
+</span><span class='line'>│       ├── bootstrap
+</span><span class='line'>│       └── syntax
+</span><span class='line'>├── sass
+</span><span class='line'>│   ├── base
+</span><span class='line'>│   ├── bootstrap
+</span><span class='line'>│   ├── custom
+</span><span class='line'>│   ├── partials
+</span><span class='line'>│   │   └── sidebar
+</span><span class='line'>│   └── syntax
+</span><span class='line'>└── <span class="nb">source</span>
+</span><span class='line'>    ├── about
+</span><span class='line'>    ├── assets
+</span><span class='line'>    │   └── jwplayer
+</span><span class='line'>    │       └── glow
+</span><span class='line'>    │           ├── controlbar
+</span><span class='line'>    │           ├── display
+</span><span class='line'>    │           ├── dock
+</span><span class='line'>    │           ├── playlist
+</span><span class='line'>    │           └── sharing
+</span><span class='line'>    ├── blog
+</span><span class='line'>    │   └── archives
+</span><span class='line'>    ├── images
+</span><span class='line'>    ├── _includes
+</span><span class='line'>    │   ├── asides
+</span><span class='line'>    │   ├── custom
+</span><span class='line'>    │   │   └── asides
+</span><span class='line'>    │   └── post
+</span><span class='line'>    ├── javascripts
+</span><span class='line'>    │   ├── asides
+</span><span class='line'>    │   └── libs
+</span><span class='line'>    ├── _layouts
+</span><span class='line'>    ├── _posts
+</span><span class='line'>    └── stylesheets
+</span><span class='line'>        ├── bootstrap
+</span><span class='line'>        └── syntax
+</span></code></pre></td></tr></table></div></figure>
+
+
 
 ]]></content>
   </entry>
