@@ -5,15 +5,12 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Blog Archive - My Octopress Blog</title>
+  <title>操作系统实验中的linux命令 - My Octopress Blog</title>
   <meta name="author" content="Your Name">
 
   
-  <meta name="description" content="Blog Archive 2012 不折腾
-May 30 2012 操作系统实验中的linux命令
-May 15 2012 ubuntu 12.04 common softwae
-May 14 2012 博客之初体验
-May 06 2012 Recent Posts 不折腾 &hellip;">
+  <meta name="description" content="首先不推荐中大信科院自己的操作系统实验课,跟着老师学完，你只是windows里点点鼠标更熟练了。强烈推荐这份南大操作系统实验,我也正在看，欢迎交流@twitter(求粉哟) 实验依赖(ubuntu 12.04下) sudo apt-get install nasm
+sudo apt-get &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -22,7 +19,7 @@ May 06 2012 Recent Posts 不折腾 &hellip;">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://orange8637.github.com/blog/archives">
+  <link rel="canonical" href="http://orange8637.github.com/blog/2012/05/15/cao-zuo-xi-tong-zhong-de-linuxming-ling">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/bootstrap/bootstrap.css" media="screen, projection" rel="stylesheet" type="text/css">
   <link href="/stylesheets/bootstrap/responsive.css" media="screen, projection" rel="stylesheet" type="text/css">
@@ -94,68 +91,138 @@ May 06 2012 Recent Posts 不折腾 &hellip;">
   <div class="container">
     <div class="row-fluid">
       
-<article role="article" class="span9">
+<article class="hentry span9" role="article">
 
   
   <header class="page-header">
-    <h1 class="entry-title">Blog Archive</h1>
+    
+      <h1 class="entry-title">操作系统实验中的linux命令</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-05-15T16:10:00+08:00" pubdate data-updated="true">May 15<span>th</span>, 2012</time>
+        
+      </p>
     
   </header>
-  
-  
 
 
-  
-  <h1>2012</h1>
+<div class="entry-content"><p>首先不推荐中大信科院自己的操作系统实验课,跟着老师学完，你只是windows里点点鼠标更熟练了。强烈推荐这份<a href="http://cslab.nju.edu.cn/opsystem/#MainPage">南大操作系统实验</a>,我也正在看，欢迎交流<a href="https://twitter.com/#!/bigbiepineapple">@twitter</a>(求粉哟)</p>
 
-<article>
-  <div class="well">
+<blockquote><p>实验依赖(ubuntu 12.04下)</p>
 
-<h2><a href="/blog/2012/05/30/bu-zhe-teng/">不折腾</a></h2>
-<time datetime="2012-05-30T22:24:00+08:00" pubdate><span class='month'>May</span> <span class='day'>30</span> <span class='year'>2012</span></time>
+<pre><code>sudo apt-get install nasm
+sudo apt-get install vim
+sudo apt-get instsall virtualbox
+</code></pre></blockquote>
 
+<p>第一次用markdown,好不熟悉,这是第二段?</p>
+
+<p>因为怕考试时候忘了命令，所以将这些记下来。</p>
+
+<blockquote><p>创建一个新的软盘</p>
+
+<pre><code>dd if=/dev/zero of=floppy.img bs=512 count=2880
+</code></pre></blockquote>
+
+<p>512Bx2880是不是正好等于1.44MB,只要修改bs（block size),count参数，你可以创建任何格式大小的磁盘镜像文件。抛弃你的botchs创建空软盘的老土方法吧,linux提供你所需要的任何机制。</p>
+
+<blockquote><p>汇编编译及写引导扇区</p>
+
+<pre><code>asm -&gt; bin
+sudo nasm boot.asm -o boot.bin
+bin -&gt; img
+sudo dd if=boot.bin of=a.img bs=512 count=1 conv=notrunc
+</code></pre>
+
+<p>读出硬盘MBR</p>
+
+<pre><code>sudo dd if=/dev/sda of=~/MYBoot.dat bs=512 count=1
+</code></pre>
+
+<p>用vim取代winHex编辑16进制功能</p>
+
+<pre><code>vim -b floppy.img
+:%!xxd
+do some rewrite...
+:%!xxd -r
+:wq
+</code></pre>
+
+<p>往镜像文件添加文件</p>
+
+<pre><code>sudo mkdir -p /mnt/floppy
+sudo mount floppy.img /mnt/floppy
+sudo cp *.com /mnt/floppy
+sudo umount /mnt/floppy
+</code></pre>
+
+<p>反汇编</p>
+
+<pre><code>ndisasm -o 0x7c00 boot.bin &gt;&gt; boot.asm
+</code></pre></blockquote>
 </div>
 
-</article>
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">Your Name</span></span>
+
+      
 
 
 
-<article>
-  <div class="well">
-
-<h2><a href="/blog/2012/05/15/cao-zuo-xi-tong-zhong-de-linuxming-ling/">操作系统实验中的linux命令</a></h2>
-<time datetime="2012-05-15T16:10:00+08:00" pubdate><span class='month'>May</span> <span class='day'>15</span> <span class='year'>2012</span></time>
-
-</div>
-
-</article>
 
 
 
-<article>
-  <div class="well">
-
-<h2><a href="/blog/2012/05/14/ubuntu-common-softwae/">ubuntu 12.04 common softwae</a></h2>
-<time datetime="2012-05-14T13:47:00+08:00" pubdate><span class='month'>May</span> <span class='day'>14</span> <span class='year'>2012</span></time>
-
-</div>
-
-</article>
-
-
-
-<article>
-  <div class="well">
-
-<h2><a href="/blog/2012/05/06/my-first-blog/">博客之初体验</a></h2>
-<time datetime="2012-05-06T23:52:00+08:00" pubdate><span class='month'>May</span> <span class='day'>06</span> <span class='year'>2012</span></time>
-
-</div>
-
-</article>
 
 
   
+
+
+<time datetime="2012-05-15T16:10:00+08:00" pubdate data-updated="true">May 15<span>th</span>, 2012</time>
+      
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  
+  
+</div>
+
+    
+    
+    <ul class="pager">
+      
+      <li class="previous"><a class="basic-alignment left"
+        href="/blog/2012/05/14/ubuntu-common-softwae/" title="Previous Post:
+        ubuntu 12.04 common softwae">&laquo; ubuntu 12.04 common softwae</a></li>
+      
+      <li><a href="/blog/archives">Blog Archives</a></li>
+      
+      <li class="next"><a class="basic-alignment right" href="/blog/2012/05/30/bu-zhe-teng/"
+        title="Next Post: 不折腾">不折腾
+        &raquo;</a></li>
+      
+    </ul>
+  </footer>
 </article>
 
 <aside class="sidebar-nav span3">

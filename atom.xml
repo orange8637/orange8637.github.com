@@ -4,7 +4,7 @@
   <title><![CDATA[My Octopress Blog]]></title>
   <link href="http://orange8637.github.com/atom.xml" rel="self"/>
   <link href="http://orange8637.github.com/"/>
-  <updated>2012-05-30T22:28:34+08:00</updated>
+  <updated>2012-05-30T22:40:44+08:00</updated>
   <id>http://orange8637.github.com/</id>
   <author>
     <name><![CDATA[Your Name]]></name>
@@ -19,6 +19,129 @@
     <updated>2012-05-30T22:24:00+08:00</updated>
     <id>http://orange8637.github.com/blog/2012/05/30/bu-zhe-teng</id>
     <content type="html"><![CDATA[
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[操作系统实验中的linux命令]]></title>
+    <link href="http://orange8637.github.com/blog/2012/05/15/cao-zuo-xi-tong-zhong-de-linuxming-ling/"/>
+    <updated>2012-05-15T16:10:00+08:00</updated>
+    <id>http://orange8637.github.com/blog/2012/05/15/cao-zuo-xi-tong-zhong-de-linuxming-ling</id>
+    <content type="html"><![CDATA[<p>首先不推荐中大信科院自己的操作系统实验课,跟着老师学完，你只是windows里点点鼠标更熟练了。强烈推荐这份<a href="http://cslab.nju.edu.cn/opsystem/#MainPage">南大操作系统实验</a>,我也正在看，欢迎交流<a href="https://twitter.com/#!/bigbiepineapple">@twitter</a>(求粉哟)</p>
+
+<blockquote><p>实验依赖(ubuntu 12.04下)</p>
+
+<pre><code>sudo apt-get install nasm
+sudo apt-get install vim
+sudo apt-get instsall virtualbox
+</code></pre></blockquote>
+
+<p>第一次用markdown,好不熟悉,这是第二段?</p>
+
+<p>因为怕考试时候忘了命令，所以将这些记下来。</p>
+
+<blockquote><p>创建一个新的软盘</p>
+
+<pre><code>dd if=/dev/zero of=floppy.img bs=512 count=2880
+</code></pre></blockquote>
+
+<p>512Bx2880是不是正好等于1.44MB,只要修改bs（block size),count参数，你可以创建任何格式大小的磁盘镜像文件。抛弃你的botchs创建空软盘的老土方法吧,linux提供你所需要的任何机制。</p>
+
+<blockquote><p>汇编编译及写引导扇区</p>
+
+<pre><code>asm -&gt; bin
+sudo nasm boot.asm -o boot.bin
+bin -&gt; img
+sudo dd if=boot.bin of=a.img bs=512 count=1 conv=notrunc
+</code></pre>
+
+<p>读出硬盘MBR</p>
+
+<pre><code>sudo dd if=/dev/sda of=~/MYBoot.dat bs=512 count=1
+</code></pre>
+
+<p>用vim取代winHex编辑16进制功能</p>
+
+<pre><code>vim -b floppy.img
+:%!xxd
+do some rewrite...
+:%!xxd -r
+:wq
+</code></pre>
+
+<p>往镜像文件添加文件</p>
+
+<pre><code>sudo mkdir -p /mnt/floppy
+sudo mount floppy.img /mnt/floppy
+sudo cp *.com /mnt/floppy
+sudo umount /mnt/floppy
+</code></pre>
+
+<p>反汇编</p>
+
+<pre><code>ndisasm -o 0x7c00 boot.bin &gt;&gt; boot.asm
+</code></pre></blockquote>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[ubuntu 12.04 common softwae]]></title>
+    <link href="http://orange8637.github.com/blog/2012/05/14/ubuntu-common-softwae/"/>
+    <updated>2012-05-14T13:47:00+08:00</updated>
+    <id>http://orange8637.github.com/blog/2012/05/14/ubuntu-common-softwae</id>
+    <content type="html"><![CDATA[<pre><code>sudo apt-get install ubuntu-restricted-extras
+sudo apt-get install vlc
+sudo apt-get install chromium-browser
+sudo apt-get install vim
+sudo apt-get install ssh
+sudo apt-get install gnome-shell
+sudo apt-get install wireshark
+sudo apt-get install putty
+sudo apt-get install filezilla
+sudo apt-get install virtualbox
+sudo apt-get install g++
+sudo apt-get install gnome-tweak-tool
+sudo apt-get install nasm
+sudo apt-get install eclipse
+sudo apt-get install ibus-googlepinyin
+sudo apt-get install codeblocks
+sudo apt-get install chmsee 
+</code></pre>
+
+<blockquote><p>不同版本，只需要将你执行<code>lsb_release -a</code>标准输出中codename替换下面的precise即可</p>
+
+<pre><code>#教育网-中国科技大学 
+deb http://debian.ustc.edu.cn/ubuntu/ precise main restricted universe multiverse
+deb http://debian.ustc.edu.cn/ubuntu/ precise-backports restricted universe multiverse
+deb http://debian.ustc.edu.cn/ubuntu/ precise-proposed main restricted universe multiverse
+deb http://debian.ustc.edu.cn/ubuntu/ precise-security main restricted universe multiverse
+deb http://debian.ustc.edu.cn/ubuntu/ precise-updates main restricted universe multiverse
+deb-src http://debian.ustc.edu.cn/ubuntu/ precise main restricted universe multiverse
+deb-src http://debian.ustc.edu.cn/ubuntu/ precise-backports main restricted universe multiverse
+deb-src http://debian.ustc.edu.cn/ubuntu/ precise-proposed main restricted universe multiverse
+deb-src http://debian.ustc.edu.cn/ubuntu/ precise-security main restricted universe multiverse
+deb-src http://debian.ustc.edu.cn/ubuntu/ precise-updates main restricted universe multiverse
+#公网-163,备胎，不在学校时取消下面注释同时注释上面
+# deb http://mirrors.163.com/ubuntu/ precise main restricted universe multiverse
+# deb http://mirrors.163.com/ubuntu/ precise-security main restricted universe multiverse
+# deb http://mirrors.163.com/ubuntu/ precise-updates main restricted universe multiverse
+# deb http://mirrors.163.com/ubuntu/ precise-proposed main restricted universe multiverse
+# deb http://mirrors.163.com/ubuntu/ precise-backports main restricted universe multiverse
+# deb-src http://mirrors.163.com/ubuntu/ precise main restricted universe multiverse
+# deb-src http://mirrors.163.com/ubuntu/ precise-security main restricted universe multiverse
+# deb-src http://mirrors.163.com/ubuntu/ precise-updates main restricted universe multiverse
+# deb-src http://mirrors.163.com/ubuntu/ precise-proposed main restricted universe multiverse
+# deb-src http://mirrors.163.com/ubuntu/ precise-backports main restricted universe multiverse
+</code></pre></blockquote>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[博客之初体验]]></title>
+    <link href="http://orange8637.github.com/blog/2012/05/06/my-first-blog/"/>
+    <updated>2012-05-06T23:52:00+08:00</updated>
+    <id>http://orange8637.github.com/blog/2012/05/06/my-first-blog</id>
+    <content type="html"><![CDATA[<h1>不写博客的程序员不是好程序员</h1>
 ]]></content>
   </entry>
   
