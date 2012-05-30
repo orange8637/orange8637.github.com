@@ -4,7 +4,7 @@
   <title><![CDATA[Category: thoughs | SYSU-pineapple's blog]]></title>
   <link href="http://orange8637.github.com/blog/categories/thoughs/atom.xml" rel="self"/>
   <link href="http://orange8637.github.com/"/>
-  <updated>2012-05-31T01:27:21+08:00</updated>
+  <updated>2012-05-31T01:28:49+08:00</updated>
   <id>http://orange8637.github.com/</id>
   <author>
     <name><![CDATA[姜晨]]></name>
@@ -28,9 +28,8 @@
 
 <h1>include&lt;stdio.h></h1>
 
-<p>using namespace std;</p>
-
-<p>void move(int n, char from, char to, char aux)
+<p>using namespace std;
+void move(int n, char from, char to, char aux)
 {</p>
 
 <pre><code>if(n==1)
@@ -75,12 +74,7 @@ return 0;
 <p>echo "have $#"
 echo "all $@"
 echo "1 $1x2x$2"
-<code>
-$sudo apt-get install ruby
-$sudo su
-</code></p>
-
-<h3>octopress directory tree</h3>
+```</p>
 
 <p>```bash 目录树
 .
