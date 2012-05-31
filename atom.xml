@@ -4,7 +4,7 @@
   <title><![CDATA[SYSU-pineapple's blog]]></title>
   <link href="http://orange8637.github.com/atom.xml" rel="self"/>
   <link href="http://orange8637.github.com/"/>
-  <updated>2012-05-31T21:46:14+08:00</updated>
+  <updated>2012-05-31T21:47:18+08:00</updated>
   <id>http://orange8637.github.com/</id>
   <author>
     <name><![CDATA[姜晨]]></name>
@@ -300,7 +300,7 @@ sudo apt-get install vim
 sudo apt-get instsall virtualbox
 </code></pre></blockquote>
 
-<p>第一次用markdown,好不熟悉,这是第二段?</p>
+<p>第一次用<a href="http://wowubuntu.com/markdown/">markdown</a>,好不熟悉,这是第二段?</p>
 
 <p>因为怕考试时候忘了命令，所以将这些记下来。</p>
 
