@@ -4,7 +4,7 @@
   <title><![CDATA[SYSU-pineapple's blog]]></title>
   <link href="http://orange8637.github.com/atom.xml" rel="self"/>
   <link href="http://orange8637.github.com/"/>
-  <updated>2012-05-31T21:47:18+08:00</updated>
+  <updated>2012-05-31T21:52:48+08:00</updated>
   <id>http://orange8637.github.com/</id>
   <author>
     <name><![CDATA[姜晨]]></name>
@@ -193,7 +193,7 @@
 </span><span class='line'>│   │   └── sidebar
 </span><span class='line'>│   └── syntax
 </span><span class='line'>└── <span class="nb">source</span> *github上origin服务器上的source分支,源码存放地
-</span><span class='line'>    ├── about
+</span><span class='line'>    ├── about *主页上about栏markdown文件
 </span><span class='line'>    ├── assets
 </span><span class='line'>    │   └── jwplayer
 </span><span class='line'>    │       └── glow
@@ -204,7 +204,7 @@
 </span><span class='line'>    │           └── sharing
 </span><span class='line'>    ├── blog
 </span><span class='line'>    │   └── archives
-</span><span class='line'>    ├── images
+</span><span class='line'>    ├── images *博客本地配图存放地
 </span><span class='line'>    ├── _includes
 </span><span class='line'>    │   ├── asides
 </span><span class='line'>    │   ├── custom
@@ -214,73 +214,10 @@
 </span><span class='line'>    │   ├── asides
 </span><span class='line'>    │   └── libs
 </span><span class='line'>    ├── _layouts
-</span><span class='line'>    ├── _posts
+</span><span class='line'>    ├── _posts *博客所有markdown源文件
 </span><span class='line'>    └── stylesheets
 </span><span class='line'>        ├── bootstrap
 </span><span class='line'>        └── syntax
-</span></code></pre></td></tr></table></div></figure>
-
-
-
-
-<figure class='code'><figcaption><span>hanoi.cpp</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-<span class='line-number'>17</span>
-<span class='line-number'>18</span>
-<span class='line-number'>19</span>
-<span class='line-number'>20</span>
-<span class='line-number'>21</span>
-<span class='line-number'>22</span>
-<span class='line-number'>23</span>
-<span class='line-number'>24</span>
-<span class='line-number'>25</span>
-<span class='line-number'>26</span>
-<span class='line-number'>27</span>
-<span class='line-number'>28</span>
-<span class='line-number'>29</span>
-</pre></td><td class='code'><pre><code class='cpp'><span class='line'><span class="cm">/*</span>
-</span><span class='line'><span class="cm">* Filename: hanoi.cpp</span>
-</span><span class='line'><span class="cm">* Last modified: 2012-05-30 18:47</span>
-</span><span class='line'><span class="cm">* Author: Chen Jiang(姜晨) -- orange8637@gmail.com</span>
-</span><span class='line'><span class="cm">* Description: 汉诺塔问题</span>
-</span><span class='line'><span class="cm">*/</span>
-</span><span class='line'><span class="cp">#include&lt;stdio.h&gt;</span>
-</span><span class='line'><span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
-</span><span class='line'><span class="kt">void</span> <span class="n">move</span><span class="p">(</span><span class="kt">int</span> <span class="n">n</span><span class="p">,</span> <span class="kt">char</span> <span class="n">from</span><span class="p">,</span> <span class="kt">char</span> <span class="n">to</span><span class="p">,</span> <span class="kt">char</span> <span class="n">aux</span><span class="p">)</span>
-</span><span class='line'><span class="p">{</span>
-</span><span class='line'>    <span class="k">if</span><span class="p">(</span><span class="n">n</span><span class="o">==</span><span class="mi">1</span><span class="p">)</span>
-</span><span class='line'>    <span class="p">{</span>
-</span><span class='line'>        <span class="n">printf</span><span class="p">(</span><span class="s">&quot;move %d from %c to %c</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="n">from</span> <span class="p">,</span><span class="n">to</span><span class="p">);</span>
-</span><span class='line'>    <span class="p">}</span>
-</span><span class='line'>    <span class="k">else</span>
-</span><span class='line'>    <span class="p">{</span>
-</span><span class='line'>        <span class="n">move</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="n">from</span><span class="p">,</span> <span class="n">aux</span><span class="p">,</span> <span class="n">to</span><span class="p">);</span>
-</span><span class='line'>        <span class="n">printf</span><span class="p">(</span><span class="s">&quot;move %d from %c to %c</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="n">from</span><span class="p">,</span> <span class="n">to</span><span class="p">,</span> <span class="n">aux</span><span class="p">);</span>
-</span><span class='line'>        <span class="n">move</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="n">aux</span><span class="p">,</span> <span class="n">to</span><span class="p">,</span> <span class="n">from</span><span class="p">);</span>
-</span><span class='line'>    <span class="p">}</span>
-</span><span class='line'><span class="p">}</span>
-</span><span class='line'><span class="kt">int</span> <span class="n">main</span><span class="p">()</span>
-</span><span class='line'><span class="p">{</span>
-</span><span class='line'>        <span class="kt">int</span> <span class="n">n</span><span class="p">;</span>
-</span><span class='line'>        <span class="n">scanf</span><span class="p">(</span><span class="s">&quot;%d&quot;</span><span class="p">,</span><span class="o">&amp;</span><span class="n">n</span><span class="p">);</span>
-</span><span class='line'>        <span class="n">move</span><span class="p">(</span><span class="n">n</span><span class="p">,</span><span class="sc">&#39;a&#39;</span><span class="p">,</span><span class="sc">&#39;c&#39;</span><span class="p">,</span><span class="sc">&#39;b&#39;</span><span class="p">);</span>
-</span><span class='line'>
-</span><span class='line'>    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
-</span><span class='line'><span class="p">}</span>
 </span></code></pre></td></tr></table></div></figure>
 
 ]]></content>
