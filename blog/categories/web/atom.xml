@@ -4,7 +4,7 @@
   <title><![CDATA[Category: web | SYSU-pineapple's blog]]></title>
   <link href="http://orange8637.github.com/blog/categories/web/atom.xml" rel="self"/>
   <link href="http://orange8637.github.com/"/>
-  <updated>2012-05-31T21:52:48+08:00</updated>
+  <updated>2012-06-01T00:16:08+08:00</updated>
   <id>http://orange8637.github.com/</id>
   <author>
     <name><![CDATA[姜晨]]></name>
@@ -18,15 +18,11 @@
     <link href="http://orange8637.github.com/blog/2012/05/30/bu-zhe-teng/"/>
     <updated>2012-05-30T22:24:00+08:00</updated>
     <id>http://orange8637.github.com/blog/2012/05/30/bu-zhe-teng</id>
-    <content type="html"><![CDATA[<p>本来上次已经配置好的博客，但是由于细节的不完善，手贱贱地把本地和远程分支上的配置都删除了，
-无奈只得重新来一次github上的octopress博客搭建。综合谷歌百度引擎，发现最好的教程仍然是
-<a href="http://octopress.org/">octopress官方博客</a>。不得不承认octopress写博客的方式很hacker,所
-有的步骤都能在shell和vim完成。有了2次搭建的经历，终于对octopree的文件管理方式有了一些理
-解:上传到github上的有两个分支，一个是master,一个是source,而source是我们最重要的源码,两个
-分支分别对应文件目录的deploy和，source文件夹(注释在下面的目录树了)，所以下次在其他电脑上
-书写博客，一定要注意clone下来的目录，要先<code>git checkout source</code>分支，然后
-<code>rake setup_github_pages</code>才能<code>rake new_post['blog']</code> <code>rake generate</code> <code>rake deploy</code>。
-好了，终于可以随意自由markdown写博客了！:)</p>
+    <content type="html"><![CDATA[<blockquote><p>本来上次已经配置好的博客，但是由于细节的不完善，手贱贱地把本地和远程分支上的配置都删除了，无奈只得重新来一次github上的octopress博客搭建。</p>
+
+<p>综合谷歌百度引擎，发现最好的教程仍然是<a href="http://octopress.org/">octopress官方博客</a>。不得不承认octopress写博客的方式很hacker,所有的步骤都能在shell和vim完成。有了2次搭建的经历，终于对octopree的文件管理方式有了一些理解:上传到github上的有两个分支，一个是master,一个是source,而source是我们最重要的源码,两个分支分别对应文件目录的deploy和，source文件夹(注释在下面的目录树了)，所以下次在其他电脑上书写博客，一定要注意clone下来的目录，要先<code>git checkout source</code>分支，然后<code>rake setup_github_pages</code>才能<code>rake new_post['blog']</code> <code>rake generate</code> <code>rake deploy</code>。</p>
+
+<p>好了，终于可以随意自由markdown写博客了！:)</p></blockquote>
 
 <p>```bash octopress目录树
 .
