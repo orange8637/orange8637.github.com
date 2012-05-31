@@ -4,7 +4,7 @@
   <title><![CDATA[SYSU-pineapple's blog]]></title>
   <link href="http://orange8637.github.com/atom.xml" rel="self"/>
   <link href="http://orange8637.github.com/"/>
-  <updated>2012-05-31T21:20:09+08:00</updated>
+  <updated>2012-05-31T21:46:14+08:00</updated>
   <id>http://orange8637.github.com/</id>
   <author>
     <name><![CDATA[姜晨]]></name>
@@ -18,11 +18,17 @@
     <link href="http://orange8637.github.com/blog/2012/05/30/bu-zhe-teng/"/>
     <updated>2012-05-30T22:24:00+08:00</updated>
     <id>http://orange8637.github.com/blog/2012/05/30/bu-zhe-teng</id>
-    <content type="html"><![CDATA[<p>fuck xxx!
-手贱把上次配置好的博客全删除了，而且是github上面的也删除了，无奈只得重新配置一次。
-先分析一下目录树</p>
+    <content type="html"><![CDATA[<p>本来上次已经配置好的博客，但是由于细节的不完善，手贱贱地把本地和远程分支上的配置都删除了，
+无奈只得重新来一次github上的octopress博客搭建。综合谷歌百度引擎，发现最好的教程仍然是
+<a href="http://octopress.org/">octopress官方博客</a>。不得不承认octopress写博客的方式很hacker,所
+有的步骤都能在shell和vim完成。有了2次搭建的经历，终于对octopree的文件管理方式有了一些理
+解:上传到github上的有两个分支，一个是master,一个是source,而source是我们最重要的源码,两个
+分支分别对应文件目录的deploy和，source文件夹(注释在下面的目录树了)，所以下次在其他电脑上
+书写博客，一定要注意clone下来的目录，要先<code>git checkout source</code>分支，然后
+<code>rake setup_github_pages</code>才能<code>rake new_post['blog']</code> <code>rake generate</code> <code>rake deploy</code>。
+好了，终于可以随意自由markdown写博客了！:)</p>
 
-<figure class='code'><figcaption><span>目录树</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<figure class='code'><figcaption><span>octopress目录树</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
 <span class='line-number'>4</span>
@@ -118,7 +124,7 @@
 <span class='line-number'>94</span>
 <span class='line-number'>95</span>
 </pre></td><td class='code'><pre><code class='bash'><span class='line'>.
-</span><span class='line'>├── _deploy
+</span><span class='line'>├── _deploy *github上origin服务器上的master分支,既最终部署的页面
 </span><span class='line'>│   ├── about
 </span><span class='line'>│   ├── assets
 </span><span class='line'>│   │   └── jwplayer
@@ -149,7 +155,7 @@
 </span><span class='line'>│       ├── bootstrap
 </span><span class='line'>│       └── syntax
 </span><span class='line'>├── plugins
-</span><span class='line'>├── public
+</span><span class='line'>├── public *本地rake generate,rake preview生成的页面
 </span><span class='line'>│   ├── about
 </span><span class='line'>│   ├── assets
 </span><span class='line'>│   │   └── jwplayer
@@ -186,7 +192,7 @@
 </span><span class='line'>│   ├── partials
 </span><span class='line'>│   │   └── sidebar
 </span><span class='line'>│   └── syntax
-</span><span class='line'>└── <span class="nb">source</span>
+</span><span class='line'>└── <span class="nb">source</span> *github上origin服务器上的source分支,源码存放地
 </span><span class='line'>    ├── about
 </span><span class='line'>    ├── assets
 </span><span class='line'>    │   └── jwplayer
@@ -343,30 +349,11 @@ sudo umount /mnt/floppy
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[ubuntu 12.04 common softwae]]></title>
+    <title type="html"><![CDATA[ubuntu 12.04 源 && 常用软件]]></title>
     <link href="http://orange8637.github.com/blog/2012/05/14/ubuntu-common-softwae/"/>
     <updated>2012-05-14T13:47:00+08:00</updated>
     <id>http://orange8637.github.com/blog/2012/05/14/ubuntu-common-softwae</id>
-    <content type="html"><![CDATA[<pre><code>sudo apt-get install ubuntu-restricted-extras
-sudo apt-get install vlc
-sudo apt-get install chromium-browser
-sudo apt-get install vim
-sudo apt-get install ssh
-sudo apt-get install gnome-shell
-sudo apt-get install wireshark
-sudo apt-get install putty
-sudo apt-get install filezilla
-sudo apt-get install virtualbox
-sudo apt-get install g++
-sudo apt-get install gnome-tweak-tool
-sudo apt-get install nasm
-sudo apt-get install eclipse
-sudo apt-get install ibus-googlepinyin
-sudo apt-get install codeblocks
-sudo apt-get install chmsee 
-</code></pre>
-
-<blockquote><p>不同版本，只需要将你执行<code>lsb_release -a</code>标准输出中codename替换下面的precise即可</p>
+    <content type="html"><![CDATA[<blockquote><p>不同版本，只需要将你执行<code>lsb_release -a</code>标准输出中codename替换下面的precise即可</p>
 
 <pre><code>#教育网-中国科技大学 
 deb http://debian.ustc.edu.cn/ubuntu/ precise main restricted universe multiverse
@@ -391,6 +378,25 @@ deb-src http://debian.ustc.edu.cn/ubuntu/ precise-updates main restricted univer
 # deb-src http://mirrors.163.com/ubuntu/ precise-proposed main restricted universe multiverse
 # deb-src http://mirrors.163.com/ubuntu/ precise-backports main restricted universe multiverse
 </code></pre></blockquote>
+
+<pre><code>sudo apt-get install ubuntu-restricted-extras
+sudo apt-get install vlc
+sudo apt-get install chromium-browser
+sudo apt-get install vim
+sudo apt-get install ssh
+sudo apt-get install gnome-shell
+sudo apt-get install wireshark
+sudo apt-get install putty
+sudo apt-get install filezilla
+sudo apt-get install virtualbox
+sudo apt-get install g++
+sudo apt-get install gnome-tweak-tool
+sudo apt-get install nasm
+sudo apt-get install eclipse
+sudo apt-get install ibus-googlepinyin
+sudo apt-get install codeblocks
+sudo apt-get install chmsee 
+</code></pre>
 ]]></content>
   </entry>
   
