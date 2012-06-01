@@ -12,7 +12,7 @@ categories: [linux]
     sudo apt-get install vim
     sudo apt-get instsall virtualbox
 
-第一次用markdown,好不熟悉,这是第二段?
+第一次用[markdown](http://wowubuntu.com/markdown/),好不熟悉,这是第二段?
 
 因为怕考试时候忘了命令，所以将这些记下来。
 

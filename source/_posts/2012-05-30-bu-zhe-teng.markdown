@@ -5,13 +5,16 @@ date: 2012-05-30 22:24
 comments: true
 categories: [web]
 ---
-fuck xxx!
-手贱把上次配置好的博客全删除了，而且是github上面的也删除了，无奈只得重新配置一次。
-先分析一下目录树
-```bash 目录树
+>本来上次已经配置好的博客，但是由于细节的不完善，手贱贱地把本地和远程分支上的配置都删除了，无奈只得重新来一次github上的octopress博客搭建。
+
+>综合谷歌百度引擎，发现最好的教程仍然是[octopress官方博客](http://octopress.org/)。不得不承认octopress写博客的方式很hacker,所有的步骤都能在shell和vim完成。有了2次搭建的经历，终于对octopree的文件管理方式有了一些理解:上传到github上的有两个分支，一个是master,一个是source,而source是我们最重要的源码,两个分支分别对应文件目录的deploy和，source文件夹(注释在下面的目录树了)，所以下次在其他电脑上书写博客，一定要注意clone下来的目录，要先`git checkout source`分支，然后`rake setup_github_pages`才能`rake new_post['blog']` `rake generate` `rake deploy`。
+
+>好了，终于可以随意自由markdown写博客了！:)
+
+```bash octopress目录树
 .
-├── _deploy
-│   ├── about
+├── _deploy *github上origin服务器上的master分支,既最终部署的页面
+│   ├── about 
 │   ├── assets
 │   │   └── jwplayer
 │   │       └── glow
@@ -41,7 +44,7 @@ fuck xxx!
 │       ├── bootstrap
 │       └── syntax
 ├── plugins
-├── public
+├── public *本地rake generate,rake preview生成的页面
 │   ├── about
 │   ├── assets
 │   │   └── jwplayer
@@ -78,8 +81,8 @@ fuck xxx!
 │   ├── partials
 │   │   └── sidebar
 │   └── syntax
-└── source
-    ├── about
+└── source *github上origin服务器上的source分支,源码存放地
+    ├── about *主页上about栏markdown文件
     ├── assets
     │   └── jwplayer
     │       └── glow
@@ -90,7 +93,7 @@ fuck xxx!
     │           └── sharing
     ├── blog
     │   └── archives
-    ├── images
+    ├── images *博客本地配图存放地
     ├── _includes
     │   ├── asides
     │   ├── custom
@@ -100,41 +103,8 @@ fuck xxx!
     │   ├── asides
     │   └── libs
     ├── _layouts
-    ├── _posts
+    ├── _posts *博客所有markdown源文件
     └── stylesheets
         ├── bootstrap
         └── syntax
-```
-
-
-```cpp hanoi.cpp
-/*
-* Filename: hanoi.cpp
-* Last modified: 2012-05-30 18:47
-* Author: Chen Jiang(姜晨) -- orange8637@gmail.com
-* Description: 汉诺塔问题
-*/
-#include<stdio.h>
-using namespace std;
-void move(int n, char from, char to, char aux)
-{
-    if(n==1)
-    {
-        printf("move %d from %c to %c\n", n, from ,to);
-    }
-    else
-    {
-        move(n-1, from, aux, to);
-        printf("move %d from %c to %c\n", n, from, to, aux);
-        move(n-1, aux, to, from);
-    }
-}
-int main()
-{
-        int n;
-        scanf("%d",&n);
-        move(n,'a','c','b');
-
-    return 0;
-}
 ```
