@@ -4,7 +4,7 @@
   <title><![CDATA[Category: linux | SYSU-pineapple's blog]]></title>
   <link href="http://orange8637.github.com/blog/categories/linux/atom.xml" rel="self"/>
   <link href="http://orange8637.github.com/"/>
-  <updated>2012-06-24T00:39:50+08:00</updated>
+  <updated>2012-06-24T02:02:56+08:00</updated>
   <id>http://orange8637.github.com/</id>
   <author>
     <name><![CDATA[姜晨]]></name>
@@ -12,6 +12,62 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[我的vim配置]]></title>
+    <link href="http://orange8637.github.com/blog/2012/06/24/wo-de-vim-peizhi/"/>
+    <updated>2012-06-24T00:42:00+08:00</updated>
+    <id>http://orange8637.github.com/blog/2012/06/24/wo-de-vim-peizhi</id>
+    <content type="html"><![CDATA[<blockquote><p>首先贴个链接<a href="http://github.com/orange8637/myvim">我的vim配置</a>,没有github帐号也可以下载zip包安装。</p></blockquote>
+
+<hr />
+
+<blockquote><p>第一次接触到ubuntu的时候就听说了vim的大名，vim的前身是鼎鼎大名的Bill Joy叔叔在1976年写的vi,vi是集成到Unix-like系统中的。
+开始被vim“神级编辑器”，“圣经编辑器”的称号吓尿了，对于一个连VS2010都用不太熟的人来说，我犹豫了很久是否有必要学习vim。但是，当我偶然在学校自习室见到某颖同学在他的10存小上网本上完全抛离鼠标，如弹钢琴般在键盘上行云流水的使用vim以及vim插件vimperator，我震惊了。
+vim的学习曲线的确很陡峭，但是一旦学会，威力巨大，工欲善其事，必先利其器,vim，你值得拥有。</p></blockquote>
+
+<hr />
+
+<blockquote><p>vim如果没有配置，还是不太好用的，下面先展示一下我的平常使用图
+<img src="../../images/vim.png" alt="vim" />
+当然我更喜欢平常写点小东西的时候用vim配合terminator分屏，那码字简直是一个享受啊。
+<img src="../../images/vim2.png" alt="vim2" /></p></blockquote>
+
+<hr />
+
+<blockquote><p>vim是由c和vimscript语言构成的，所以vim的插件脚本也是很牛很牛的，少量插件让vim更好用。开始在网上找了几份vim配置，不是过于冗余复杂就是过分简单。所以决定自己根据需求配置一个属于自己的vim。</p></blockquote>
+
+<hr />
+
+<blockquote><p>首先,ctags需要手动安装，我将ctags压缩包放到了vim_plugin文件夹内，安装步骤经典的源代码安装方法</p></blockquote>
+
+<p><code>
+pineapple@pineapple:~/.vim/vim_plugin$ tar -zxvf ctags-5.8.tar.gz
+pineapple@pineapple:~/.vim/vim_plugin$ ./configure
+pineapple@pineapple:~/.vim/vim_plugin$ make
+pineapple@pineapple:~/.vim/vim_plugin$ sudo make install
+</code></p>
+
+<hr />
+
+<blockquote><p>插件清单,我的最小完备集需求，实现任务管理器，TAB超级补全，头文件源文件一键切换，c/c++/java一键编译运行，过于智能的c.vim以及括号补全我不习惯，就没有设置了。
+<code>
+pineapple@pineapple:~/.vim/plugin$ tree
+.
+├── a.vim
+├── neocomplcache.vim
+├── supertab.vim
+├── taglist.vim
+├── winfileexplorer.vim
+├── winmanager.vim
+└── wintagexplorer.vim
+</code></p></blockquote>
+
+<hr />
+
+<blockquote><p>当然还有最重要的.vimrc文件，这个可以根据需求灵活更改。详见<a href="https://github.com/orange8637/myvim/blob/master/vimrc">.vimrc</a>。配置好了vim,就可以做专心做你爱做的事，写笔记，写博客，写代码，写论文，当然还有两个很重要的浏览器插件，firefox的vimperator和chrome的vimium,都是利器，我每天都不能离开它们了，呵呵。</p></blockquote>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[操作系统实验中的linux命令]]></title>
