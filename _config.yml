@@ -77,7 +77,7 @@ disqus_short_name: orange8637
 disqus_show_comment_count: true
 
 #asides
-default_asides: [asides/recent_posts.html, asides/category-list.html, asides/github.html, asides/weibo.html]
+default_asides: [asides/recent_posts.html, asides/category-list.html, asides/weibo.html]
 
 # 其它内容....
 #
