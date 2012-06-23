@@ -1,0 +1,50 @@
+---
+layout: post
+title: "我的vim配置"
+date: 2012-06-24 00:42
+comments: true
+categories: [linux,vim]
+---
+
+>首先贴个链接[我的vim配置](http://github.com/orange8637/myvim),没有github帐号也可以下载zip包安装。
+
+---
+>第一次接触到ubuntu的时候就听说了vim的大名，vim的前身是鼎鼎大名的Bill Joy叔叔在1976年写的vi,vi是集成到Unix-like系统中的。
+>开始被vim“神级编辑器”，“圣经编辑器”的称号吓尿了，对于一个连VS2010都用不太熟的人来说，我犹豫了很久是否有必要学习vim。但是，当我偶然在学校自习室见到某颖同学在他的10寸小上网本上完全抛离鼠标，如弹钢琴般在键盘上行云流水的使用vim以及vim插件vimperator，我震惊了。
+>vim的学习曲线的确很陡峭，但是一旦学会，威力巨大，工欲善其事，必先利其器,vim，你值得拥有。
+
+---
+>vim如果没有配置，还是不太好用的，下面先展示一下我的平常使用图
+![vim](../../images/vim.png)
+>当然我更喜欢平常写点小东西的时候用vim配合terminator分屏，那码字简直是一个享受啊。
+![vim2](../../images/vim2.png)
+
+---
+>vim是由c和vimscript语言构成的，所以vim的插件脚本也是很牛很牛的，少量插件让vim更好用。开始在网上找了几份vim配置，不是过于冗余复杂就是过分简单。所以决定自己根据需求配置一个属于自己的vim。
+
+---
+>首先,ctags需要手动安装，我将ctags压缩包放到了vim\_plugin文件夹内，安装步骤经典的源代码安装方法
+
+```
+pineapple@pineapple:~/.vim/vim_plugin$ tar -zxvf ctags-5.8.tar.gz 
+pineapple@pineapple:~/.vim/vim_plugin$ ./configure
+pineapple@pineapple:~/.vim/vim_plugin$ make
+pineapple@pineapple:~/.vim/vim_plugin$ sudo make install
+```
+
+---
+>插件清单,我的最小完备集需求，实现任务管理器，TAB超级补全，头文件源文件一键切换，c/c++/java一键编译运行，过于智能的c.vim以及括号补全我不习惯，就没有设置了。
+```
+pineapple@pineapple:~/.vim/plugin$ tree
+.
+├── a.vim
+├── neocomplcache.vim
+├── supertab.vim
+├── taglist.vim
+├── winfileexplorer.vim
+├── winmanager.vim
+└── wintagexplorer.vim
+```
+
+---
+>当然还有最重要的.vimrc文件，这个可以根据需求灵活更改。详见[.vimrc](https://github.com/orange8637/myvim/blob/master/vimrc)。配置好了vim,就可以做专心做你爱做的事，写笔记，写博客，写代码，写论文，当然还有两个很重要的浏览器插件，firefox的vimperator和chrome的vimium,都是利器，我每天都不能离开它们了，呵呵。
