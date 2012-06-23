@@ -4,7 +4,7 @@
   <title><![CDATA[SYSU-pineapple's blog]]></title>
   <link href="http://orange8637.github.com/atom.xml" rel="self"/>
   <link href="http://orange8637.github.com/"/>
-  <updated>2012-06-24T02:02:56+08:00</updated>
+  <updated>2012-06-24T02:04:45+08:00</updated>
   <id>http://orange8637.github.com/</id>
   <author>
     <name><![CDATA[姜晨]]></name>
@@ -23,7 +23,7 @@
 <hr />
 
 <blockquote><p>第一次接触到ubuntu的时候就听说了vim的大名，vim的前身是鼎鼎大名的Bill Joy叔叔在1976年写的vi,vi是集成到Unix-like系统中的。
-开始被vim“神级编辑器”，“圣经编辑器”的称号吓尿了，对于一个连VS2010都用不太熟的人来说，我犹豫了很久是否有必要学习vim。但是，当我偶然在学校自习室见到某颖同学在他的10存小上网本上完全抛离鼠标，如弹钢琴般在键盘上行云流水的使用vim以及vim插件vimperator，我震惊了。
+开始被vim“神级编辑器”，“圣经编辑器”的称号吓尿了，对于一个连VS2010都用不太熟的人来说，我犹豫了很久是否有必要学习vim。但是，当我偶然在学校自习室见到某颖同学在他的10寸小上网本上完全抛离鼠标，如弹钢琴般在键盘上行云流水的使用vim以及vim插件vimperator，我震惊了。
 vim的学习曲线的确很陡峭，但是一旦学会，威力巨大，工欲善其事，必先利其器,vim，你值得拥有。</p></blockquote>
 
 <hr />
