@@ -519,27 +519,26 @@ vim的学习曲线的确很陡峭，但是一旦学会，威力巨大，工欲�
   </header>
 
 
-  <div class="entry-content"><p>首先不推荐中大信科院自己的操作系统实验课,跟着老师学完，你只是windows里点点鼠标更熟练了。强烈推荐这份<a href="http://cslab.nju.edu.cn/opsystem/#MainPage">南大操作系统实验</a>,我也正在看，欢迎交流<a href="https://twitter.com/#!/bigbiepineapple">@twitter</a>(求粉哟)</p>
-
-<blockquote><p>实验依赖(ubuntu 12.04下)</p>
+  <div class="entry-content"><blockquote><p>首先不推荐中大信科院自己的操作系统实验课,跟着老师学完，你只是windows里点点鼠标更熟练了。强烈推荐这份<a href="http://cslab.nju.edu.cn/opsystem/#MainPage">南大操作系统实验</a>,我也正在看，欢迎交流<a href="https://twitter.com/#!/bigbiepineapple">@twitter</a>(求粉哟)
+实验依赖(ubuntu 12.04下)</p>
 
 <pre><code>sudo apt-get install nasm
 sudo apt-get install vim
 sudo apt-get instsall virtualbox
-</code></pre></blockquote>
+</code></pre>
 
 <p>第一次用<a href="http://wowubuntu.com/markdown/">markdown</a>,好不熟悉,这是第二段?</p>
 
 <p>因为怕考试时候忘了命令，所以将这些记下来。</p>
 
-<blockquote><p>创建一个新的软盘</p>
+<p>创建一个新的软盘</p>
 
 <pre><code>dd if=/dev/zero of=floppy.img bs=512 count=2880
-</code></pre></blockquote>
+</code></pre>
 
 <p>512Bx2880是不是正好等于1.44MB,只要修改bs（block size),count参数，你可以创建任何格式大小的磁盘镜像文件。抛弃你的botchs创建空软盘的老土方法吧,linux提供你所需要的任何机制。</p>
 
-<blockquote><p>汇编编译及写引导扇区</p>
+<p>汇编编译及写引导扇区</p>
 
 <pre><code>asm -&gt; bin
 sudo nasm boot.asm -o boot.bin
@@ -634,12 +633,16 @@ deb-src http://debian.ustc.edu.cn/ubuntu/ precise-updates main restricted univer
 # deb-src http://mirrors.163.com/ubuntu/ precise-updates main restricted universe multiverse
 # deb-src http://mirrors.163.com/ubuntu/ precise-proposed main restricted universe multiverse
 # deb-src http://mirrors.163.com/ubuntu/ precise-backports main restricted universe multiverse
-</code></pre></blockquote>
+</code></pre>
+
+<hr />
+
+<p>我的常用软件</p>
 
 <pre><code>sudo apt-get install ubuntu-restricted-extras
 sudo apt-get install vlc
 sudo apt-get install chromium-browser
-sudo apt-get install vim
+sudo apt-get install vim-gtk
 sudo apt-get install ssh
 sudo apt-get install gnome-shell
 sudo apt-get install wireshark
@@ -653,7 +656,7 @@ sudo apt-get install eclipse
 sudo apt-get install ibus-googlepinyin
 sudo apt-get install codeblocks
 sudo apt-get install chmsee 
-</code></pre>
+</code></pre></blockquote>
 </div>
   
   
