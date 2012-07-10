@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: c/c++ | SYSU-pineapple's blog]]></title>
+  <link href="http://orange8637.github.com/blog/categories/c-c-/atom.xml" rel="self"/>
+  <link href="http://orange8637.github.com/"/>
+  <updated>2012-07-10T11:44:47+08:00</updated>
+  <id>http://orange8637.github.com/</id>
+  <author>
+    <name><![CDATA[姜晨]]></name>
+    <email><![CDATA[orange8637@gmail.com]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[C++缓冲区]]></title>
+    <link href="http://orange8637.github.com/blog/2012/07/10/c-plus-plus-huan-chong-qu/"/>
+    <updated>2012-07-10T11:30:00+08:00</updated>
+    <id>http://orange8637.github.com/blog/2012/07/10/c-plus-plus-huan-chong-qu</id>
+    <content type="html"><![CDATA[<blockquote><p>先提出问题，以后在解决。
+案例1</p></blockquote>
+
+<p>```cpp 键盘输入流缓冲区</p>
+
+<h1>include <iostream></h1>
+
+<p>using namespace std;<br/>
+int main()<br/>
+{</p>
+
+<pre><code>char name[10];
+cin.getline(name,5);
+cout&lt;&lt;name;
+cin.getline(name,5);
+cout&lt;&lt;name;
+return 0;  
+</code></pre>
+
+<p>}
+```</p>
+
+<blockquote><p>案例2</p></blockquote>
+
+<p>```cpp 文件输入流缓冲区</p>
+
+<h1>include<iostream></h1>
+
+<h1>include&lt;stdio.h></h1>
+
+<h1>include<map></h1>
+
+<p>using namespace std;
+int main()
+{</p>
+
+<pre><code>freopen("data.in", "r", stdin);
+map&lt;char*,double&gt; m;
+char name[100];
+double score;
+for(int i=0;i&lt;2;i++)
+{
+    //scanf("%s %lf", name, &amp;score);
+    cin&gt;&gt;name&gt;&gt;score;
+    m[name] = score;
+}
+for(map&lt;char*,double&gt;::iterator it=m.begin(); it!=m.end(); it++)
+{
+    printf("%s %lf\n", it-&gt;first, it-&gt;second);
+}
+return 0;
+</code></pre>
+
+<p>}
+```</p>
+
+<blockquote><p>附上原文本文件
+<code>html data.in
+apple 92.3
+orange 94.5
+</code></p></blockquote>
+]]></content>
+  </entry>
+  
+</feed>
