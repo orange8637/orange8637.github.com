@@ -15,9 +15,10 @@ categories: [linux,vim]
 
 ---
 >vim如果没有配置，还是不太好用的，下面先展示一下我的平常使用图
-![vim](../../images/vim.png)
+![vim](http://orange8637.github.com/images/vim.png)
 >当然我更喜欢平常写点小东西的时候用vim配合terminator分屏，那码字简直是一个享受啊。
-![vim2](../../images/vim2.png)
+![vim2](http://orange8637.github.com/images/vim2.png)
+
 
 ---
 >vim是由c和vimscript语言构成的，所以vim的插件脚本也是很牛很牛的，少量插件让vim更好用。开始在网上找了几份vim配置，不是过于冗余复杂就是过分简单。所以决定自己根据需求配置一个属于自己的vim。

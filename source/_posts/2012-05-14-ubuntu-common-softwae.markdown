@@ -28,13 +28,12 @@ categories: [linux]
     # deb-src http://mirrors.163.com/ubuntu/ precise-updates main restricted universe multiverse
     # deb-src http://mirrors.163.com/ubuntu/ precise-proposed main restricted universe multiverse
     # deb-src http://mirrors.163.com/ubuntu/ precise-backports main restricted universe multiverse
-
-    
-
+---
+>我的常用软件
     sudo apt-get install ubuntu-restricted-extras
     sudo apt-get install vlc
     sudo apt-get install chromium-browser
-    sudo apt-get install vim
+    sudo apt-get install vim-gtk
     sudo apt-get install ssh
     sudo apt-get install gnome-shell
     sudo apt-get install wireshark

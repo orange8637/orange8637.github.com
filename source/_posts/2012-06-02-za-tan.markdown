@@ -1,8 +1,0 @@
----
-layout: post
-title: "杂谈"
-date: 2012-06-02 00:48
-comments: true
-categories: [thoughts]
----
-##佛曰:三千繁华，弹指刹那；百年过后，不过一捧黄沙。

@@ -6,20 +6,21 @@ comments: true
 categories: [linux]
 ---
 
-首先不推荐中大信科院自己的操作系统实验课,跟着老师学完，你只是windows里点点鼠标更熟练了。强烈推荐这份[南大操作系统实验](http://cslab.nju.edu.cn/opsystem/#MainPage),我也正在看，欢迎交流[@twitter](https://twitter.com/#!/bigbiepineapple)(求粉哟)
+>首先不推荐中大信科院自己的操作系统实验课,跟着老师学完，你只是windows里点点鼠标更熟练了。强烈推荐这份[南大操作系统实验](http://cslab.nju.edu.cn/opsystem/#MainPage),我也正在看，欢迎交流[@twitter](https://twitter.com/#!/bigbiepineapple)(求粉哟)
 >实验依赖(ubuntu 12.04下)
     sudo apt-get install nasm
     sudo apt-get install vim
     sudo apt-get instsall virtualbox
 
-第一次用[markdown](http://wowubuntu.com/markdown/),好不熟悉,这是第二段?
 
-因为怕考试时候忘了命令，所以将这些记下来。
+>第一次用[markdown](http://wowubuntu.com/markdown/),好不熟悉,这是第二段?
+
+>因为怕考试时候忘了命令，所以将这些记下来。
 
 >创建一个新的软盘
     dd if=/dev/zero of=floppy.img bs=512 count=2880
 
-512Bx2880是不是正好等于1.44MB,只要修改bs（block size),count参数，你可以创建任何格式大小的磁盘镜像文件。抛弃你的botchs创建空软盘的老土方法吧,linux提供你所需要的任何机制。
+>512Bx2880是不是正好等于1.44MB,只要修改bs（block size),count参数，你可以创建任何格式大小的磁盘镜像文件。抛弃你的botchs创建空软盘的老土方法吧,linux提供你所需要的任何机制。
 
 >汇编编译及写引导扇区
     asm -> bin
