@@ -1,0 +1,371 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>python之socket初探 - SYSU-pineapple's blog</title>
+  <meta name="author" content="姜晨">
+
+  
+  <meta name="description" content="第一天，睡觉刷微薄。 第二天，刷微薄睡觉。 第三天，&#8230;&#8230; 。 和胡适先生打牌打牌一样，我一到暑假就彻底慵懒，从小学到大学，暑假从来没有好好利用。开始是有规划的，但是一计划就是一整个暑假，也就是睡睡睡。 吐嘈完自身后， &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://orange8637.github.com/blog/2012/08/13/pythonzhi-socketchu-tan">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/bootstrap/bootstrap.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/stylesheets/bootstrap/responsive.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/stylesheets/syntax/syntax.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <style type="text/css">
+    body {
+      padding-bottom: 40px;
+    }
+    h1 {
+      margin-bottom: 15px;
+    }
+    img {
+      max-width: 100%;
+    }
+    .sharing, .meta, .pager {
+      margin: 20px 0px 20px 0px;
+    }
+    .page-footer p {
+      text-align: center;
+    }
+  </style>
+  <script src="/javascripts/libs/jquery.js"></script>
+  <script src="/javascripts/libs/modernizr-2.0.js"></script>
+  <script src="/javascripts/libs/bootstrap.js"></script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <link href="/atom.xml" rel="alternate" title="SYSU-pineapple's blog" type="application/atom+xml">
+  
+  
+
+</head>
+
+<body   >
+  <nav role="navigation"><div class="navbar">
+  <div class="navbar-inner">
+    <div class="container">
+      <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </a>
+
+      <a class="brand" href="/">SYSU-pineapple's blog</a>
+
+      <div class="nav-collapse">
+        <ul class="nav">
+  <li><a href="/">博客</a></li>
+  <li><a href="/blog/archives">归档</a></li>
+  <li><a href="/about">关于</a></li>
+</ul>
+
+
+        <ul class="nav pull-right" data-subscription="rss">
+          <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+          
+        </ul>
+
+        
+          <form class="pull-right navbar-search" action="http://google.com/search" method="get">
+            <fieldset role="search">
+              <input type="hidden" name="q" value="site:orange8637.github.com" />
+              <input class="search-query" type="text" name="q" results="0" placeholder="Search"/>
+            </fieldset>
+          </form>
+        
+      </div>
+    </div>
+  </div>
+</div>
+</nav>
+  <div class="container">
+    <div class="row-fluid">
+      
+<article class="hentry span9" role="article">
+
+  
+  <header class="page-header">
+    
+      <h1 class="entry-title">Python之socket初探</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-08-13T23:59:00+08:00" pubdate data-updated="true">Aug 13<span>th</span>, 2012</time>
+        
+         | <a href="#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><blockquote><p>第一天，睡觉刷微薄。</p>
+
+<p>第二天，刷微薄睡觉。</p>
+
+<p>第三天，&#8230;&#8230;    。</p></blockquote>
+
+<hr />
+
+<blockquote><p>和胡适先生打牌打牌一样，我一到暑假就彻底慵懒，从小学到大学，暑假从来没有好好利用。开始是有规划的，但是一计划就是一整个暑假，也就是睡睡睡。</p>
+
+<p>吐嘈完自身后，还是总结一下这几天在看奥运刷微薄间隙看的一点python入门书经验吧。</p>
+
+<p>相信很多人都听过这个笑话：一哥们去谷歌面试，简历只有一句话：I wrote python，结果面试到第10轮谷歌才知道这句话的意思。这哥们就是大名鼎鼎的Guido。我当时听到这个笑话，有点纳闷，怎么以python为噱头，而不以cpp,java这些更有名的语言抖包袱呢。现在想来真是惭愧，大二了才知道python。</p>
+
+<p>程序员每隔一段时间就会讨论各种语言的优劣，就像月经一样，即使像Linus这样的高手也不能避免。我个菜鸟就不浪费时间参与python和java,cpp的对比了，直接show the code, 展示一下python的美丽。</p></blockquote>
+
+<figure class='code'><figcaption><span>tcpS.py</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="c">#! /usr/bin/env python</span>
+</span><span class='line'><span class="c"># encoding:utf-8</span>
+</span><span class='line'><span class="kn">from</span> <span class="nn">socket</span> <span class="kn">import</span> <span class="o">*</span>
+</span><span class='line'><span class="kn">from</span> <span class="nn">time</span> <span class="kn">import</span> <span class="n">ctime</span>
+</span><span class='line'>
+</span><span class='line'><span class="n">HOST</span> <span class="o">=</span> <span class="s">&#39;&#39;</span>
+</span><span class='line'><span class="n">PORT</span> <span class="o">=</span> <span class="mi">21567</span>
+</span><span class='line'><span class="n">BUFSIZE</span> <span class="o">=</span> <span class="mi">1024</span>
+</span><span class='line'><span class="n">ADDR</span> <span class="o">=</span> <span class="p">(</span><span class="n">HOST</span><span class="p">,</span> <span class="n">PORT</span><span class="p">)</span>
+</span><span class='line'><span class="n">tcpSerSock</span> <span class="o">=</span> <span class="n">socket</span><span class="p">(</span><span class="n">AF_INET</span><span class="p">,</span> <span class="n">SOCK_STREAM</span><span class="p">)</span>
+</span><span class='line'><span class="n">tcpSerSock</span><span class="o">.</span><span class="n">bind</span><span class="p">(</span><span class="n">ADDR</span><span class="p">)</span>
+</span><span class='line'><span class="n">tcpSerSock</span><span class="o">.</span><span class="n">listen</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+</span><span class='line'><span class="k">while</span> <span class="bp">True</span><span class="p">:</span>
+</span><span class='line'>  <span class="k">print</span> <span class="s">&#39;waiting for connection...&#39;</span>
+</span><span class='line'>  <span class="n">tcpCliSock</span><span class="p">,</span> <span class="n">addr</span> <span class="o">=</span> <span class="n">tcpSerSock</span><span class="o">.</span><span class="n">accept</span><span class="p">()</span>
+</span><span class='line'>  <span class="k">print</span> <span class="s">&#39;...connected from:&#39;</span><span class="p">,</span><span class="n">addr</span>
+</span><span class='line'>  <span class="k">while</span> <span class="bp">True</span><span class="p">:</span>
+</span><span class='line'>      <span class="n">data</span> <span class="o">=</span> <span class="n">tcpCliSock</span><span class="o">.</span><span class="n">recv</span><span class="p">(</span><span class="n">BUFSIZE</span><span class="p">)</span>
+</span><span class='line'>      <span class="n">tcpCliSock</span><span class="o">.</span><span class="n">send</span><span class="p">(</span><span class="s">&#39;the server replid at </span><span class="si">%s</span><span class="s"> </span><span class="si">%s</span><span class="s">&#39;</span> <span class="o">%</span><span class="p">(</span><span class="n">ctime</span><span class="p">(),</span> <span class="n">data</span><span class="p">))</span>
+</span><span class='line'>  <span class="n">tcpCliSock</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</span><span class='line'><span class="n">tcpSerSock</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<blockquote><p>抛开这段代码干什么，直接看外貌，想起一个同学曾经语重声长地对我说：python的代码很漂亮。用现在很火的中国好声音导师哈林老师的话讲就是：python代码辨识度很高。刚接触python一个星期，python用缩进的简洁取代其他语言的各种括号要漂亮多了。</p>
+
+<p>言归真传，这个python例子是实现一个C/S架构的网络编程，重点是socket。我用的是TCP，先讲讲服务器的设计要点：创建服务器套接字->绑定地址到套接字->监听连接->服务器无限循环->接受客户端连接->通信循环->与客户端对话->关闭客户端套接字->关闭服务器套接字。</p>
+
+<p>有了S版本，自然要有Client版本：</p></blockquote>
+
+<figure class='code'><figcaption><span>tcpC.py</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="c">#! /usr/bin/env python</span>
+</span><span class='line'><span class="c"># encoding: utf-8</span>
+</span><span class='line'><span class="kn">from</span> <span class="nn">socket</span> <span class="kn">import</span> <span class="o">*</span>
+</span><span class='line'>
+</span><span class='line'><span class="n">HOST</span> <span class="o">=</span> <span class="s">&#39;192.168.1.103&#39;</span>
+</span><span class='line'><span class="n">PORT</span> <span class="o">=</span> <span class="mi">21567</span>
+</span><span class='line'><span class="n">BUFSIZE</span> <span class="o">=</span> <span class="mi">1024</span>
+</span><span class='line'><span class="n">ADDR</span> <span class="o">=</span> <span class="p">(</span><span class="n">HOST</span><span class="p">,</span> <span class="n">PORT</span><span class="p">)</span>
+</span><span class='line'><span class="n">tcpCliSock</span> <span class="o">=</span> <span class="n">socket</span><span class="p">(</span><span class="n">AF_INET</span><span class="p">,</span> <span class="n">SOCK_STREAM</span><span class="p">)</span>
+</span><span class='line'><span class="n">tcpCliSock</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="n">ADDR</span><span class="p">)</span>
+</span><span class='line'><span class="k">while</span> <span class="bp">True</span><span class="p">:</span>
+</span><span class='line'>  <span class="n">data</span> <span class="o">=</span> <span class="nb">raw_input</span><span class="p">(</span><span class="s">&#39;&gt;&gt;&gt; &#39;</span><span class="p">)</span>
+</span><span class='line'>  <span class="n">tcpCliSock</span><span class="o">.</span><span class="n">send</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+</span><span class='line'>  <span class="n">data</span> <span class="o">=</span> <span class="n">tcpCliSock</span><span class="o">.</span><span class="n">recv</span><span class="p">(</span><span class="n">BUFSIZE</span><span class="p">)</span>
+</span><span class='line'>  <span class="k">print</span> <span class="n">data</span>
+</span><span class='line'><span class="n">tcpCliSock</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<blockquote><p>客户端版本设计要点就简单多了：创建客户端套接字->连接服务器->通信循环->对话->关闭客户端套接字。</p>
+
+<p>下面就要测试了。主机ubuntu12.04-desktop运行tcpS.py
+<img src="http://orange8637.github.com/images/tcpS.png" alt="" /></p>
+
+<p>客户端虚拟机下的centos6.2-server版
+<img src="http://orange8637.github.com/images/tcpC.png" alt="" /></p></blockquote>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">姜晨</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-08-13T23:59:00+08:00" pubdate data-updated="true">Aug 13<span>th</span>, 2012</time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/linux/'>linux</a>, <a class='category' href='/blog/categories/python/'>python</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  
+  
+</div>
+
+    
+    
+    <section>
+      <h1>Comments</h1>
+      <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+    </section>
+    
+    <ul class="pager">
+      
+      <li class="previous"><a class="basic-alignment left"
+        href="/blog/2012/07/27/%3C%3Czhi-ming-mo-zhu-%3E%3E%2Cji-zhu-shu-jia/" title="Previous Post:
+        <<致命魔术>>，技术暑假">&laquo; <<致命魔术>>，技术暑假</a></li>
+      
+      <li><a href="/blog/archives">Blog Archives</a></li>
+      
+    </ul>
+  </footer>
+</article>
+
+<aside class="sidebar-nav span3">
+  
+    <section class="well">
+  <ul id="recent_posts" class="nav nav-list">
+    <li class="nav-header"> 最近</li>
+    
+      <li class="post">
+        <a href="/blog/2012/08/13/pythonzhi-socketchu-tan/">python之socket初探</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/07/27/%3C%3Czhi-ming-mo-zhu-%3E%3E%2Cji-zhu-shu-jia/"><<致命魔术>>，技术暑假</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/07/17/yong-sheng-huo-de-jian-qiao-da-zi-ji-de-ming-ling-xing/">用生活的键敲打自己的命令行</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/07/12/pair/">Pair</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/07/10/c-plus-plus-huan-chong-qu/">C++缓冲区</a>
+      </li>
+    
+  </ul>
+</section>
+<section class="well">
+<ul id="recent_posts" class="nav nav-list">
+<li class="nav-header"> 分类</li>
+	<li class="post"><li><a href='/blog/categories/c-c-'>c/c++ (2)</a></li><li><a href='/blog/categories/linux'>linux (4)</a></li><li><a href='/blog/categories/python'>python (1)</a></li><li><a href='/blog/categories/thoughts'>thoughts (3)</a></li><li><a href='/blog/categories/vim'>vim (1)</a></li><li><a href='/blog/categories/web'>web (1)</a></li></li>
+</ul>
+</section>
+<iframe width="100%" height="550" class="share_self"  frameborder="0" scrolling="no" src="http://widget.weibo.com/weiboshow/index.php?language=&width=0&height=550&fansRow=2&ptype=1&speed=0&skin=1&isTitle=1&noborder=1&isWeibo=1&isFans=1&uid=1957020914&verifier=9e0cf85c&dpc=1"></iframe>
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo" class="page-footer"><hr>
+<p>
+  Copyright &copy; 2012 - 姜晨 -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+<script type="text/javascript">
+      var disqus_shortname = 'orange8637';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://orange8637.github.com/blog/2012/08/13/pythonzhi-socketchu-tan/';
+        var disqus_url = 'http://orange8637.github.com/blog/2012/08/13/pythonzhi-socketchu-tan/';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
