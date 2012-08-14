@@ -4,7 +4,7 @@
   <title><![CDATA[SYSU-pineapple's blog]]></title>
   <link href="http://orange8637.github.com/atom.xml" rel="self"/>
   <link href="http://orange8637.github.com/"/>
-  <updated>2012-08-14T01:01:54+08:00</updated>
+  <updated>2012-08-14T08:47:49+08:00</updated>
   <id>http://orange8637.github.com/</id>
   <author>
     <name><![CDATA[姜晨]]></name>
@@ -126,7 +126,7 @@
 
 <p><img src="http://orange8637.github.com/images/tcpS.png" alt="" /></p>
 
-<p>客户端虚拟机下的centos6.2-server版</p>
+<p>客户端虚拟机下的centos6.2-server运行tcpC.py</p>
 
 <p><img src="http://orange8637.github.com/images/tcpC.png" alt="" /></p></blockquote>
 ]]></content>
