@@ -1,0 +1,85 @@
+---
+layout: post
+title: "python之socket初探"
+date: 2012-08-13 23:59
+comments: true
+categories: [linux,python]
+---
+
+> 第一天，睡觉刷微薄。
+
+> 第二天，刷微薄睡觉。
+
+> 第三天，......    。
+
+----
+
+> 和胡适先生打牌打牌一样，我一到暑假就彻底慵懒，从小学到大学，暑假从来没有好好利用。开始是有规划的，但是一计划就是一整个暑假，也就是睡睡睡。
+
+> 吐嘈完自身后，还是总结一下这几天在看奥运刷微薄间隙看的一点python入门书经验吧。
+
+> 相信很多人都听过这个笑话：一哥们去谷歌面试，简历只有一句话：I wrote python，结果面试到第10轮谷歌才知道这句话的意思。这哥们就是大名鼎鼎的Guido。我当时听到这个笑话，有点纳闷，怎么以python为噱头，而不以cpp,java这些更有名的语言抖包袱呢。现在想来真是惭愧，大二了才知道python。
+
+> 程序员每隔一段时间就会讨论各种语言的优劣，就像月经一样，即使像Linus这样的高手也不能避免。我个菜鸟就不浪费时间参与python和java,cpp的对比了，直接show the code, 展示一下python的美丽。
+
+
+```python tcpS.py
+#! /usr/bin/env python
+# encoding:utf-8
+from socket import *
+from time import ctime
+
+HOST = ''
+PORT = 21567
+BUFSIZE = 1024
+ADDR = (HOST, PORT)
+tcpSerSock = socket(AF_INET, SOCK_STREAM)
+tcpSerSock.bind(ADDR)
+tcpSerSock.listen(5)
+while True:
+	print 'waiting for connection...'
+	tcpCliSock, addr = tcpSerSock.accept()
+	print '...connected from:',addr
+	while True:
+		data = tcpCliSock.recv(BUFSIZE)
+		tcpCliSock.send('the server replid at %s %s' %(ctime(), data))
+	tcpCliSock.close()
+tcpSerSock.close()
+
+```
+
+> 抛开这段代码干什么，直接看外貌，想起一个同学曾经语重声长地对我说：python的代码很漂亮。用现在很火的中国好声音导师哈林老师的话讲就是：python代码辨识度很高。刚接触python一个星期，python用缩进的简洁取代其他语言的各种括号要漂亮多了。
+
+> 言归真传，这个python例子是实现一个C/S架构的网络编程，重点是socket。我用的是TCP，先讲讲服务器的设计要点：创建服务器套接字->绑定地址到套接字->监听连接->服务器无限循环->接受客户端连接->通信循环->与客户端对话->关闭客户端套接字->关闭服务器套接字。
+
+> 有了S版本，自然要有Client版本：
+
+```python tcpC.py
+#! /usr/bin/env python
+# encoding: utf-8
+from socket import *
+
+HOST = '192.168.1.103'
+PORT = 21567
+BUFSIZE = 1024
+ADDR = (HOST, PORT)
+tcpCliSock = socket(AF_INET, SOCK_STREAM)
+tcpCliSock.connect(ADDR)
+while True:
+	data = raw_input('>>> ')
+	tcpCliSock.send(data)
+	data = tcpCliSock.recv(BUFSIZE)
+	print data
+tcpCliSock.close()
+```
+
+> 客户端版本设计要点就简单多了：创建客户端套接字->连接服务器->通信循环->对话->关闭客户端套接字。
+
+> 下面就要测试了。主机ubuntu12.04-desktop运行tcpS.py
+
+> ![](http://orange8637.github.com/images/tcpS.png)
+
+> 客户端虚拟机下的centos6.2-server运行tcpC.py
+
+> ![](http://orange8637.github.com/images/tcpC.png)
+
