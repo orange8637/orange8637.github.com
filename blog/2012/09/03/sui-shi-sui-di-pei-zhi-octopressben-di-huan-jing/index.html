@@ -9,8 +9,7 @@
   <meta name="author" content="姜晨">
 
   
-  <meta name="description" content="
-">
+  <meta name="description" content="最近帮南都报社的一小子买了台10.6寸上网本，为了自己也尝尝新电脑玩，将我自己那台14寸笔记本格了，把两台电脑都装了ubuntu12.04 &amp; win7双系统。自然是以前的octopress配置都没了，所以我要在两台电脑都配置好octopress本地环境，创造一个写博客的好环境。 一. &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -122,7 +121,51 @@
   </header>
 
 
-<div class="entry-content">
+<div class="entry-content"><blockquote><p>最近帮南都报社的一小子买了台10.6寸上网本，为了自己也尝尝新电脑玩，将我自己那台14寸笔记本格了，把两台电脑都装了ubuntu12.04 &amp; win7双系统。自然是以前的octopress配置都没了，所以我要在两台电脑都配置好octopress本地环境，创造一个写博客的好环境。</p></blockquote>
+
+<hr />
+
+<blockquote><h3>一.安装ruby,git等软件依赖</h3></blockquote>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>kiwi@kiwi:~$ sudo apt-get install git
+</span><span class='line'>kiwi@kiwi:~$ sudo apt-get install ruby1.9.3
+</span><span class='line'>kiwi@kiwi:~$ sudo gem install bundler --pre
+</span><span class='line'>kiwi@kiwi:~$ bundle install</span></code></pre></td></tr></table></div></figure>
+
+
+<hr />
+
+<blockquote><h3>二.从github上获取你的博客</h3></blockquote>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>kiwi@kiwi:~$ git clone -b source git@github.com:orange8637/orange8637.github.com octopress
+</span><span class='line'>kiwi@kiwi:~$ cd octopress/
+</span><span class='line'>kiwi@kiwi:~$ git clone git@github.com:orange8637/orange8637.github.com _deploy </span></code></pre></td></tr></table></div></figure>
+
+
+<blockquote><p>由于octopress这个项目和我们其他的github项目不同，它可不是只有一个master分支的，所以我们要理清一个关系:文件目录octopress对应远程和本地的source分支，_deploy目录对应远程和本地的master分支。</p></blockquote>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>kiwi@kiwi:~/octopress$ git branch
+</span><span class='line'>* source
+</span><span class='line'>kiwi@kiwi:~/octopress$ cd _deploy/
+</span><span class='line'>kiwi@kiwi:~/octopress/_deploy$ git branch
+</span><span class='line'>* master</span></code></pre></td></tr></table></div></figure>
+
+
+<hr />
+
+<blockquote><p>好了。不到10条指令，源速度够快的话，10分钟我们就配好了octopress环境，就是这么简单，没有数据库史上最快的可以版本控制的博客环境就可以工作了。多<code>rake new_post</code>吧。</p></blockquote>
 </div>
 
 
@@ -147,6 +190,12 @@
 
 <time datetime="2012-09-03T20:01:00+08:00" pubdate data-updated="true">Sep 3<span>rd</span>, 2012</time>
       
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/web/'>web</a>
+  
+</span>
 
 
     </p>
@@ -208,7 +257,7 @@
 <section class="well">
 <ul id="recent_posts" class="nav nav-list">
 <li class="nav-header"> 分类</li>
-	<li class="post"><li><a href='/blog/categories/c-c-'>c/c++ (2)</a></li><li><a href='/blog/categories/linux'>linux (4)</a></li><li><a href='/blog/categories/python'>python (1)</a></li><li><a href='/blog/categories/thoughts'>thoughts (3)</a></li><li><a href='/blog/categories/vim'>vim (1)</a></li><li><a href='/blog/categories/web'>web (1)</a></li></li>
+	<li class="post"><li><a href='/blog/categories/c-c-'>c/c++ (2)</a></li><li><a href='/blog/categories/linux'>linux (4)</a></li><li><a href='/blog/categories/python'>python (1)</a></li><li><a href='/blog/categories/thoughts'>thoughts (3)</a></li><li><a href='/blog/categories/vim'>vim (1)</a></li><li><a href='/blog/categories/web'>web (2)</a></li></li>
 </ul>
 </section>
 <iframe width="100%" height="550" class="share_self"  frameborder="0" scrolling="no" src="http://widget.weibo.com/weiboshow/index.php?language=&width=0&height=550&fansRow=2&ptype=1&speed=0&skin=1&isTitle=1&noborder=1&isWeibo=1&isFans=1&uid=1957020914&verifier=9e0cf85c&dpc=1"></iframe>

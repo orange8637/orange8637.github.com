@@ -2,13 +2,13 @@
 <urlset xmlns='http://www.sitemaps.org/schemas/sitemap/0.9'>
     <url>
         <loc>http://orange8637.github.com/blog/2012/05/14/ubuntu-common-softwae/</loc>
-        <lastmod>2012-09-03T19:52:45+08:00</lastmod>
+        <lastmod>2012-09-03T20:39:53+08:00</lastmod>
     </url>
     <url>
         <loc>
             http://orange8637.github.com/blog/2012/05/15/cao-zuo-xi-tong-zhong-de-linuxming-ling/
         </loc>
-        <lastmod>2012-09-03T19:52:45+08:00</lastmod>
+        <lastmod>2012-09-03T20:40:37+08:00</lastmod>
     </url>
     <url>
         <loc>http://orange8637.github.com/blog/2012/05/30/bu-zhe-teng/</loc>
@@ -50,7 +50,7 @@
         <loc>
             http://orange8637.github.com/blog/2012/09/03/sui-shi-sui-di-pei-zhi-octopressben-di-huan-jing/
         </loc>
-        <lastmod>2012-09-03T20:01:03+08:00</lastmod>
+        <lastmod>2012-09-03T20:42:02+08:00</lastmod>
     </url>
     <url>
         <loc>http://orange8637.github.com/404.html</loc>
@@ -58,7 +58,7 @@
     </url>
     <url>
         <loc>http://orange8637.github.com/blog/archives/</loc>
-        <lastmod>2012-09-03T20:01:03+08:00</lastmod>
+        <lastmod>2012-09-03T20:42:02+08:00</lastmod>
     </url>
     <url>
         <loc>http://orange8637.github.com/about/</loc>
@@ -66,6 +66,6 @@
     </url>
     <url>
         <loc>http://orange8637.github.com/</loc>
-        <lastmod>2012-09-03T20:01:03+08:00</lastmod>
+        <lastmod>2012-09-03T20:42:02+08:00</lastmod>
     </url>
 </urlset>
