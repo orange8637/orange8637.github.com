@@ -16,7 +16,6 @@ categories: [web]
 kiwi@kiwi:~$ sudo apt-get install git
 kiwi@kiwi:~$ sudo apt-get install ruby1.9.3
 kiwi@kiwi:~$ sudo gem install bundler --pre
-kiwi@kiwi:~$ bundle install
 ```
 
 ----
@@ -25,6 +24,8 @@ kiwi@kiwi:~$ bundle install
 kiwi@kiwi:~$ git clone -b source git@github.com:orange8637/orange8637.github.com octopress
 kiwi@kiwi:~$ cd octopress/
 kiwi@kiwi:~$ git clone git@github.com:orange8637/orange8637.github.com _deploy 
+kiwi@kiwi:~$ bundle install
+
 ```
 > 由于octopress这个项目和我们其他的github项目不同，它可不是只有一个master分支的，所以我们要理清一个关系:文件目录octopress对应远程和本地的source分支，_deploy目录对应远程和本地的master分支。
 
