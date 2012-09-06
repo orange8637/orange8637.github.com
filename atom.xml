@@ -4,7 +4,7 @@
   <title><![CDATA[SYSU-pineapple's blog]]></title>
   <link href="http://orange8637.github.com/atom.xml" rel="self"/>
   <link href="http://orange8637.github.com/"/>
-  <updated>2012-09-06T20:20:05+08:00</updated>
+  <updated>2012-09-06T20:29:43+08:00</updated>
   <id>http://orange8637.github.com/</id>
   <author>
     <name><![CDATA[姜晨]]></name>
@@ -12,6 +12,24 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[MySQL note 1]]></title>
+    <link href="http://orange8637.github.com/blog/2012/09/06/mysqlxue-xi-bi-ji-1/"/>
+    <updated>2012-09-06T20:23:00+08:00</updated>
+    <id>http://orange8637.github.com/blog/2012/09/06/mysqlxue-xi-bi-ji-1</id>
+    <content type="html"><![CDATA[<blockquote><p>第一个学习的数据库，以MySQL开刀。</p>
+
+<p>Server version:mysql 5.5.24-0ubuntu0.12.04.1 (Ubuntu)</p>
+
+<p>1.字符集修改</p>
+
+<p>mysql5.5版本以后不支持修改default-character-set方法，改为<code>vim sudo:/etc/mysql/my.cnf</code> ,在<code>[mysqld]</code>后添加</p></blockquote>
+
+<pre><code>character-set-server=utf8
+</code></pre>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[随时随地配置octopress本地环境]]></title>

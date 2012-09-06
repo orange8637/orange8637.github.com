@@ -9,7 +9,7 @@
   <meta name="author" content="姜晨">
 
   
-  <meta name="description" content="最近帮南都报社的一小子买了台10.6寸上网本，为了自己也尝尝新电脑玩，将我自己那台14寸笔记本格了，把两台电脑都装了ubuntu12.04 &amp; win7双系统。自然是以前的octopress配置都没了，所以我要在两台电脑都配置好octopress本地环境，创造一个写博客的好环境。 一. &hellip;">
+  <meta name="description" content="第一个学习的数据库，以MySQL开刀。 Server version:mysql 5.5.24-0ubuntu0.12.04.1 (Ubuntu) 1.字符集修改 mysql5.5版本以后不支持修改default-character-set方法，改为vim sudo:/etc/mysql/my. &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -92,6 +92,53 @@
     <div class="row-fluid">
       <div class="span9">
   
+  
+  
+    <article>
+      
+  <header class="page-header">
+    
+      <h1 class="entry-title"><a href="/blog/2012/09/06/mysqlxue-xi-bi-ji-1/">MySQL Note 1</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-09-06T20:23:00+08:00" pubdate data-updated="true">Sep 6<span>th</span>, 2012</time>
+        
+         | <a href="/blog/2012/09/06/mysqlxue-xi-bi-ji-1/#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><blockquote><p>第一个学习的数据库，以MySQL开刀。</p>
+
+<p>Server version:mysql 5.5.24-0ubuntu0.12.04.1 (Ubuntu)</p>
+
+<p>1.字符集修改</p>
+
+<p>mysql5.5版本以后不支持修改default-character-set方法，改为<code>vim sudo:/etc/mysql/my.cnf</code> ,在<code>[mysqld]</code>后添加</p></blockquote>
+
+<pre><code>character-set-server=utf8
+</code></pre>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -1163,96 +1210,6 @@ vim的学习曲线的确很陡峭，但是一旦学会，威力巨大，工欲�
 
     </article>
   
-  
-    <article>
-      
-  <header class="page-header">
-    
-      <h1 class="entry-title"><a href="/blog/2012/05/15/cao-zuo-xi-tong-zhong-de-linuxming-ling/">操作系统实验中的linux命令</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2012-05-15T16:10:00+08:00" pubdate data-updated="true">May 15<span>th</span>, 2012</time>
-        
-         | <a href="/blog/2012/05/15/cao-zuo-xi-tong-zhong-de-linuxming-ling/#disqus_thread">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><blockquote><p>首先不推荐中大信科院自己的操作系统实验课,跟着老师学完，你只是windows里点点鼠标更熟练了。强烈推荐这份<a href="http://cslab.nju.edu.cn/opsystem/#MainPage">南大操作系统实验</a>,我也正在看，欢迎交流<a href="https://twitter.com/#!/bigbiepineapple">@twitter</a>(求粉哟)
-实验依赖(ubuntu 12.04下)</p>
-
-<pre><code>sudo apt-get install nasm
-sudo apt-get install vim
-sudo apt-get instsall virtualbox
-</code></pre>
-
-<p>第一次用<a href="http://wowubuntu.com/markdown/">markdown</a>,好不熟悉,这是第二段?</p>
-
-<p>因为怕考试时候忘了命令，所以将这些记下来。</p>
-
-<p>创建一个新的软盘</p>
-
-<pre><code>dd if=/dev/zero of=floppy.img bs=512 count=2880
-</code></pre>
-
-<p>512Bx2880是不是正好等于1.44MB,只要修改bs（block size),count参数，你可以创建任何格式大小的磁盘镜像文件。抛弃你的botchs创建空软盘的老土方法吧,linux提供你所需要的任何机制。</p>
-
-<p>汇编编译及写引导扇区</p>
-
-<pre><code>asm -&gt; bin
-sudo nasm boot.asm -o boot.bin
-bin -&gt; img
-sudo dd if=boot.bin of=a.img bs=512 count=1 conv=notrunc
-</code></pre>
-
-<p>读出硬盘MBR</p>
-
-<pre><code>sudo dd if=/dev/sda of=~/MYBoot.dat bs=512 count=1
-</code></pre>
-
-<p>用vim取代winHex编辑16进制功能</p>
-
-<pre><code>vim -b floppy.img
-:%!xxd
-do some rewrite...
-:%!xxd -r
-:wq
-</code></pre>
-
-<p>往镜像文件添加文件</p>
-
-<pre><code>sudo mkdir -p /mnt/floppy
-sudo mount floppy.img /mnt/floppy
-sudo cp *.com /mnt/floppy
-sudo umount /mnt/floppy
-</code></pre>
-
-<p>反汇编</p>
-
-<pre><code>ndisasm -o 0x7c00 boot.bin &gt;&gt; boot.asm
-</code></pre></blockquote>
-</div>
-  
-  
-
-
-    </article>
-  
   <ul class="pager">
     
     <li class="previous"><a href="/blog/page/2/">&larr; Older</a></li>
@@ -1266,6 +1223,10 @@ sudo umount /mnt/floppy
     <section class="well">
   <ul id="recent_posts" class="nav nav-list">
     <li class="nav-header"> 最近</li>
+    
+      <li class="post">
+        <a href="/blog/2012/09/06/mysqlxue-xi-bi-ji-1/">MySQL note 1</a>
+      </li>
     
       <li class="post">
         <a href="/blog/2012/09/03/sui-shi-sui-di-pei-zhi-octopressben-di-huan-jing/">随时随地配置octopress本地环境</a>
@@ -1283,16 +1244,12 @@ sudo umount /mnt/floppy
         <a href="/blog/2012/07/17/yong-sheng-huo-de-jian-qiao-da-zi-ji-de-ming-ling-xing/">用生活的键敲打自己的命令行</a>
       </li>
     
-      <li class="post">
-        <a href="/blog/2012/07/12/pair/">Pair</a>
-      </li>
-    
   </ul>
 </section>
 <section class="well">
 <ul id="recent_posts" class="nav nav-list">
 <li class="nav-header"> 分类</li>
-	<li class="post"><li><a href='/blog/categories/c-c-'>c/c++ (2)</a></li><li><a href='/blog/categories/linux'>linux (4)</a></li><li><a href='/blog/categories/python'>python (1)</a></li><li><a href='/blog/categories/thoughts'>thoughts (3)</a></li><li><a href='/blog/categories/vim'>vim (1)</a></li><li><a href='/blog/categories/web'>web (2)</a></li></li>
+	<li class="post"><li><a href='/blog/categories/c-c-'>c/c++ (2)</a></li><li><a href='/blog/categories/linux'>linux (4)</a></li><li><a href='/blog/categories/mysql'>MySQL (1)</a></li><li><a href='/blog/categories/python'>python (1)</a></li><li><a href='/blog/categories/thoughts'>thoughts (3)</a></li><li><a href='/blog/categories/vim'>vim (1)</a></li><li><a href='/blog/categories/web'>web (2)</a></li></li>
 </ul>
 </section>
 <iframe width="100%" height="550" class="share_self"  frameborder="0" scrolling="no" src="http://widget.weibo.com/weiboshow/index.php?language=&width=0&height=550&fansRow=2&ptype=1&speed=0&skin=1&isTitle=1&noborder=1&isWeibo=1&isFans=1&uid=1957020914&verifier=9e0cf85c&dpc=1"></iframe>

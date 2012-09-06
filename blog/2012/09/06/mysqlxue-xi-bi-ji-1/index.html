@@ -5,11 +5,11 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>用生活的键敲打自己的命令行 - SYSU-pineapple's blog</title>
+  <title>MySQL note 1 - SYSU-pineapple's blog</title>
   <meta name="author" content="姜晨">
 
   
-  <meta name="description" content="一直以来，我最敬佩的不是那些技术看起来很牛很牛的人，而是那些文笔很好的创作设计者，不写博客的程序员不是好程序员，这是我的价值观。本来是不打算转载任何文章的，但是在豆瓣看到这个书评小魏爱生活，太喜欢了。近期要常上豆瓣读书与CSDN。 世界是如此的熙熙攘攘 让年轻的心找不到方向 &hellip;">
+  <meta name="description" content="第一个学习的数据库，以MySQL开刀。 Server version:mysql 5.5.24-0ubuntu0.12.04.1 (Ubuntu) 1.字符集修改 mysql5.5版本以后不支持修改default-character-set方法，改为vim sudo:/etc/mysql/my. &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -18,7 +18,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://orange8637.github.com/blog/2012/07/17/yong-sheng-huo-de-jian-qiao-da-zi-ji-de-ming-ling-xing">
+  <link rel="canonical" href="http://orange8637.github.com/blog/2012/09/06/mysqlxue-xi-bi-ji-1">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/bootstrap/bootstrap.css" media="screen, projection" rel="stylesheet" type="text/css">
   <link href="/stylesheets/bootstrap/responsive.css" media="screen, projection" rel="stylesheet" type="text/css">
@@ -96,7 +96,7 @@
   
   <header class="page-header">
     
-      <h1 class="entry-title">用生活的键敲打自己的命令行</h1>
+      <h1 class="entry-title">MySQL Note 1</h1>
     
     
       <p class="meta">
@@ -112,7 +112,7 @@
   
 
 
-<time datetime="2012-07-17T11:52:00+08:00" pubdate data-updated="true">Jul 17<span>th</span>, 2012</time>
+<time datetime="2012-09-06T20:23:00+08:00" pubdate data-updated="true">Sep 6<span>th</span>, 2012</time>
         
          | <a href="#disqus_thread">Comments</a>
         
@@ -121,35 +121,16 @@
   </header>
 
 
-<div class="entry-content"><blockquote><p> 一直以来，我最敬佩的不是那些技术看起来很牛很牛的人，而是那些文笔很好的创作设计者，不写博客的程序员不是好程序员，这是我的价值观。本来是不打算转载任何文章的，但是在豆瓣看到这个书评<a href="http://book.douban.com/review/5408425/">小魏爱生活</a>，太喜欢了。近期要常上豆瓣读书与CSDN。</p></blockquote>
+<div class="entry-content"><blockquote><p>第一个学习的数据库，以MySQL开刀。</p>
 
-<hr />
+<p>Server version:mysql 5.5.24-0ubuntu0.12.04.1 (Ubuntu)</p>
 
-<blockquote><p> 世界是如此的熙熙攘攘</p>
+<p>1.字符集修改</p>
 
-<p> 让年轻的心找不到方向</p>
+<p>mysql5.5版本以后不支持修改default-character-set方法，改为<code>vim sudo:/etc/mysql/my.cnf</code> ,在<code>[mysqld]</code>后添加</p></blockquote>
 
-<p> 但这些人是不能小看的啊</p>
-
-<p> 如果</p>
-
-<p> 他们开始敲打自己的命令行</p></blockquote>
-
-<p>　　</p>
-
-<blockquote><p> “一群IT小小鸟，来自十几所院校，或科班，或非科班；或男生，或女生,在失望中追求希望，在迷茫中辨别方向……”那些故事太真实，让我觉得就像一个个学长学姐在我熟悉的教室里平静地给我讲他自己的故事一样，让我越读到后来，越怀着一种崇敬而羡慕的心情。</p></blockquote>
-
-<p>　　</p>
-
-<blockquote><p> 那些讲故事的人，是一开始就定好方向，然后一步一步走过去也好，还是在跌跌撞撞中摸索，最后找到自己的方向也好，都以认真的面孔，上进的姿态生活，然后在一点点进步，一点点思索中理所当然地走到那么一个平衡的状态——可以与生活握手言和，可以那么自然地审视自己的原来，然后平和而谦逊地告诉我们于自己经历中总结的道理。</p></blockquote>
-
-<p>　　</p>
-
-<blockquote><p> 在故事的字里行间，在每个不同的人不同的道路上的是相同品质，持久而坚定，专注而踏实。他们言传身受让我觉得，那由对自己对未来的不确定而引起的惶惶是一种多么无知的状态……收获那么少，只因为自己把那么多不曾用心打理的时间浪费在幼稚的好高骛远和无数的浅尝辄止上面。现在大二觉得时间那么那么少，才可惜大一的时间被自己那样低效率的牺牲。开始时那样充满期待的希望自己可以成为怎样怎样的牛人，然后在“谁谁很厉害”“谁谁做了个什么什么”的“听说”中，自己也知道了一些概念，然后匆匆的去学这个技术，去看那个书……书也真的是看了些，但翻透的少，囫囵的多……泛泛的涉猎中也有了一些自己的偏好，但真的不敢说什么是自己坚持下来了的，那么多时候只是让自己处于一个不停步的状态，以求不被落下的太远，不被鄙视的太多，却一直没有魄力停下来，认真的反思，认真的规划，认真的坚持……</p></blockquote>
-
-<p>　　</p>
-
-<blockquote><p> 优秀的人，优秀的故事，不是让我们在对比中无限的自卑，而是提醒我们去反省总结，去调整自己。我承认对比和反省中我对自己很有几分失望，但我依旧对未来抱以全部的希望。</p></blockquote>
+<pre><code>character-set-server=utf8
+</code></pre>
 </div>
 
 
@@ -172,12 +153,12 @@
   
 
 
-<time datetime="2012-07-17T11:52:00+08:00" pubdate data-updated="true">Jul 17<span>th</span>, 2012</time>
+<time datetime="2012-09-06T20:23:00+08:00" pubdate data-updated="true">Sep 6<span>th</span>, 2012</time>
       
 
 <span class="categories">
   
-    <a class='category' href='/blog/categories/thoughts/'>thoughts</a>
+    <a class='category' href='/blog/categories/mysql/'>MySQL</a>
   
 </span>
 
@@ -201,14 +182,10 @@
     <ul class="pager">
       
       <li class="previous"><a class="basic-alignment left"
-        href="/blog/2012/07/12/pair/" title="Previous Post:
-        Pair">&laquo; Pair</a></li>
+        href="/blog/2012/09/03/sui-shi-sui-di-pei-zhi-octopressben-di-huan-jing/" title="Previous Post:
+        随时随地配置octopress本地环境">&laquo; 随时随地配置octopress本地环境</a></li>
       
       <li><a href="/blog/archives">Blog Archives</a></li>
-      
-      <li class="next"><a class="basic-alignment right" href="/blog/2012/07/27/%3C%3Czhi-ming-mo-zhu-%3E%3E%2Cji-zhu-shu-jia/"
-        title="Next Post: <<致命魔术>>，技术暑假"><<致命魔术>>，技术暑假
-        &raquo;</a></li>
       
     </ul>
   </footer>
@@ -270,8 +247,8 @@
       
         
         // var disqus_developer = 1;
-        var disqus_identifier = 'http://orange8637.github.com/blog/2012/07/17/yong-sheng-huo-de-jian-qiao-da-zi-ji-de-ming-ling-xing/';
-        var disqus_url = 'http://orange8637.github.com/blog/2012/07/17/yong-sheng-huo-de-jian-qiao-da-zi-ji-de-ming-ling-xing/';
+        var disqus_identifier = 'http://orange8637.github.com/blog/2012/09/06/mysqlxue-xi-bi-ji-1/';
+        var disqus_url = 'http://orange8637.github.com/blog/2012/09/06/mysqlxue-xi-bi-ji-1/';
         var disqus_script = 'embed.js';
       
     (function () {
