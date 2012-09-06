@@ -4,7 +4,7 @@
   <title><![CDATA[Category: web | SYSU-pineapple's blog]]></title>
   <link href="http://orange8637.github.com/blog/categories/web/atom.xml" rel="self"/>
   <link href="http://orange8637.github.com/"/>
-  <updated>2012-09-03T20:43:37+08:00</updated>
+  <updated>2012-09-06T20:20:05+08:00</updated>
   <id>http://orange8637.github.com/</id>
   <author>
     <name><![CDATA[姜晨]]></name>
@@ -28,19 +28,21 @@
 kiwi@kiwi:~$ sudo apt-get install git
 kiwi@kiwi:~$ sudo apt-get install ruby1.9.3
 kiwi@kiwi:~$ sudo gem install bundler --pre
-kiwi@kiwi:~$ bundle install
 </code></p>
 
 <hr />
 
 <blockquote><h3>二.从github上获取你的博客</h3>
 
-<p><code>
+<p>```
 kiwi@kiwi:~$ git clone -b source git@github.com:orange8637/orange8637.github.com octopress
 kiwi@kiwi:~$ cd octopress/
 kiwi@kiwi:~$ git clone git@github.com:orange8637/orange8637.github.com _deploy
-</code>
-由于octopress这个项目和我们其他的github项目不同，它可不是只有一个master分支的，所以我们要理清一个关系:文件目录octopress对应远程和本地的source分支，_deploy目录对应远程和本地的master分支。</p></blockquote>
+kiwi@kiwi:~$ bundle install</p></blockquote>
+
+<p>```</p>
+
+<blockquote><p>由于octopress这个项目和我们其他的github项目不同，它可不是只有一个master分支的，所以我们要理清一个关系:文件目录octopress对应远程和本地的source分支，_deploy目录对应远程和本地的master分支。</p></blockquote>
 
 <p><code>
 kiwi@kiwi:~/octopress$ git branch

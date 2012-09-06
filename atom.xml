@@ -4,7 +4,7 @@
   <title><![CDATA[SYSU-pineapple's blog]]></title>
   <link href="http://orange8637.github.com/atom.xml" rel="self"/>
   <link href="http://orange8637.github.com/"/>
-  <updated>2012-09-03T20:43:37+08:00</updated>
+  <updated>2012-09-06T20:20:05+08:00</updated>
   <id>http://orange8637.github.com/</id>
   <author>
     <name><![CDATA[姜晨]]></name>
@@ -27,11 +27,9 @@
 <figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
-<span class='line-number'>4</span>
 </pre></td><td class='code'><pre><code class=''><span class='line'>kiwi@kiwi:~$ sudo apt-get install git
 </span><span class='line'>kiwi@kiwi:~$ sudo apt-get install ruby1.9.3
-</span><span class='line'>kiwi@kiwi:~$ sudo gem install bundler --pre
-</span><span class='line'>kiwi@kiwi:~$ bundle install</span></code></pre></td></tr></table></div></figure>
+</span><span class='line'>kiwi@kiwi:~$ sudo gem install bundler --pre</span></code></pre></td></tr></table></div></figure>
 
 
 <hr />
@@ -41,9 +39,12 @@
 <figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
+<span class='line-number'>4</span>
 </pre></td><td class='code'><pre><code class=''><span class='line'>kiwi@kiwi:~$ git clone -b source git@github.com:orange8637/orange8637.github.com octopress
 </span><span class='line'>kiwi@kiwi:~$ cd octopress/
-</span><span class='line'>kiwi@kiwi:~$ git clone git@github.com:orange8637/orange8637.github.com _deploy </span></code></pre></td></tr></table></div></figure>
+</span><span class='line'>kiwi@kiwi:~$ git clone git@github.com:orange8637/orange8637.github.com _deploy 
+</span><span class='line'>kiwi@kiwi:~$ bundle install
+</span></code></pre></td></tr></table></div></figure>
 
 
 <blockquote><p>由于octopress这个项目和我们其他的github项目不同，它可不是只有一个master分支的，所以我们要理清一个关系:文件目录octopress对应远程和本地的source分支，_deploy目录对应远程和本地的master分支。</p></blockquote>
