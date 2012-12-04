@@ -9,9 +9,7 @@
   <meta name="author" content="姜晨">
 
   
-  <meta name="description" content="首先不推荐中大信科院自己的操作系统实验课,跟着老师学完，你只是windows里点点鼠标更熟练了。强烈推荐这份南大操作系统实验,我也正在看，欢迎交流@twitter(求粉哟)
-实验依赖(ubuntu 12.04下) sudo apt-get install nasm
-sudo apt-get &hellip;">
+  <meta name="description" content="本来上次已经配置好的博客，但是由于细节的不完善，手贱贱地把本地和远程分支上的配置都删除了，无奈只得重新来一次github上的octopress博客搭建。 综合谷歌百度引擎，发现最好的教程仍然是octopress官方博客。不得不承认octopress写博客的方式很hacker, &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -94,6 +92,241 @@ sudo apt-get &hellip;">
     <div class="row-fluid">
       <div class="span9">
   
+  
+  
+    <article>
+      
+  <header class="page-header">
+    
+      <h1 class="entry-title"><a href="/blog/2012/05/30/bu-zhe-teng/">又折腾了一晚</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-05-30T22:24:00+08:00" pubdate data-updated="true">May 30<span>th</span>, 2012</time>
+        
+         | <a href="/blog/2012/05/30/bu-zhe-teng/#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><blockquote><p>本来上次已经配置好的博客，但是由于细节的不完善，手贱贱地把本地和远程分支上的配置都删除了，无奈只得重新来一次github上的octopress博客搭建。</p>
+
+<p>综合谷歌百度引擎，发现最好的教程仍然是<a href="http://octopress.org/">octopress官方博客</a>。不得不承认octopress写博客的方式很hacker,所有的步骤都能在shell和vim完成。有了2次搭建的经历，终于对octopree的文件管理方式有了一些理解:上传到github上的有两个分支，一个是master,一个是source,而source是我们最重要的源码,两个分支分别对应文件目录的deploy和，source文件夹(注释在下面的目录树了)，所以下次在其他电脑上书写博客，一定要注意clone下来的目录，要先<code>git checkout source</code>分支，然后<code>rake setup_github_pages</code>才能<code>rake new_post['blog']</code> <code>rake generate</code> <code>rake deploy</code>。</p>
+
+<p>好了，终于可以随意自由markdown写博客了！:)</p></blockquote>
+
+<figure class='code'><figcaption><span>octopress目录树</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+<span class='line-number'>32</span>
+<span class='line-number'>33</span>
+<span class='line-number'>34</span>
+<span class='line-number'>35</span>
+<span class='line-number'>36</span>
+<span class='line-number'>37</span>
+<span class='line-number'>38</span>
+<span class='line-number'>39</span>
+<span class='line-number'>40</span>
+<span class='line-number'>41</span>
+<span class='line-number'>42</span>
+<span class='line-number'>43</span>
+<span class='line-number'>44</span>
+<span class='line-number'>45</span>
+<span class='line-number'>46</span>
+<span class='line-number'>47</span>
+<span class='line-number'>48</span>
+<span class='line-number'>49</span>
+<span class='line-number'>50</span>
+<span class='line-number'>51</span>
+<span class='line-number'>52</span>
+<span class='line-number'>53</span>
+<span class='line-number'>54</span>
+<span class='line-number'>55</span>
+<span class='line-number'>56</span>
+<span class='line-number'>57</span>
+<span class='line-number'>58</span>
+<span class='line-number'>59</span>
+<span class='line-number'>60</span>
+<span class='line-number'>61</span>
+<span class='line-number'>62</span>
+<span class='line-number'>63</span>
+<span class='line-number'>64</span>
+<span class='line-number'>65</span>
+<span class='line-number'>66</span>
+<span class='line-number'>67</span>
+<span class='line-number'>68</span>
+<span class='line-number'>69</span>
+<span class='line-number'>70</span>
+<span class='line-number'>71</span>
+<span class='line-number'>72</span>
+<span class='line-number'>73</span>
+<span class='line-number'>74</span>
+<span class='line-number'>75</span>
+<span class='line-number'>76</span>
+<span class='line-number'>77</span>
+<span class='line-number'>78</span>
+<span class='line-number'>79</span>
+<span class='line-number'>80</span>
+<span class='line-number'>81</span>
+<span class='line-number'>82</span>
+<span class='line-number'>83</span>
+<span class='line-number'>84</span>
+<span class='line-number'>85</span>
+<span class='line-number'>86</span>
+<span class='line-number'>87</span>
+<span class='line-number'>88</span>
+<span class='line-number'>89</span>
+<span class='line-number'>90</span>
+<span class='line-number'>91</span>
+<span class='line-number'>92</span>
+<span class='line-number'>93</span>
+<span class='line-number'>94</span>
+<span class='line-number'>95</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>.
+</span><span class='line'>├── _deploy *github上origin服务器上的master分支,既最终部署的页面
+</span><span class='line'>│   ├── about
+</span><span class='line'>│   ├── assets
+</span><span class='line'>│   │   └── jwplayer
+</span><span class='line'>│   │       └── glow
+</span><span class='line'>│   │           ├── controlbar
+</span><span class='line'>│   │           ├── display
+</span><span class='line'>│   │           ├── dock
+</span><span class='line'>│   │           ├── playlist
+</span><span class='line'>│   │           └── sharing
+</span><span class='line'>│   ├── blog
+</span><span class='line'>│   │   ├── 2012
+</span><span class='line'>│   │   │   └── 05
+</span><span class='line'>│   │   │       ├── 14
+</span><span class='line'>│   │   │       │   └── ubuntu-common-softwae
+</span><span class='line'>│   │   │       ├── 15
+</span><span class='line'>│   │   │       │   └── cao-zuo-xi-tong-zhong-de-linuxming-ling
+</span><span class='line'>│   │   │       └── 30
+</span><span class='line'>│   │   │           └── bu-zhe-teng
+</span><span class='line'>│   │   ├── archives
+</span><span class='line'>│   │   └── categories
+</span><span class='line'>│   │       ├── linux
+</span><span class='line'>│   │       └── thoughs
+</span><span class='line'>│   ├── images
+</span><span class='line'>│   ├── javascripts
+</span><span class='line'>│   │   ├── asides
+</span><span class='line'>│   │   └── libs
+</span><span class='line'>│   └── stylesheets
+</span><span class='line'>│       ├── bootstrap
+</span><span class='line'>│       └── syntax
+</span><span class='line'>├── plugins
+</span><span class='line'>├── public *本地rake generate,rake preview生成的页面
+</span><span class='line'>│   ├── about
+</span><span class='line'>│   ├── assets
+</span><span class='line'>│   │   └── jwplayer
+</span><span class='line'>│   │       └── glow
+</span><span class='line'>│   │           ├── controlbar
+</span><span class='line'>│   │           ├── display
+</span><span class='line'>│   │           ├── dock
+</span><span class='line'>│   │           ├── playlist
+</span><span class='line'>│   │           └── sharing
+</span><span class='line'>│   ├── blog
+</span><span class='line'>│   │   ├── 2012
+</span><span class='line'>│   │   │   └── 05
+</span><span class='line'>│   │   │       ├── 14
+</span><span class='line'>│   │   │       │   └── ubuntu-common-softwae
+</span><span class='line'>│   │   │       ├── 15
+</span><span class='line'>│   │   │       │   └── cao-zuo-xi-tong-zhong-de-linuxming-ling
+</span><span class='line'>│   │   │       └── 30
+</span><span class='line'>│   │   │           └── bu-zhe-teng
+</span><span class='line'>│   │   ├── archives
+</span><span class='line'>│   │   └── categories
+</span><span class='line'>│   │       ├── linux
+</span><span class='line'>│   │       └── web
+</span><span class='line'>│   ├── images
+</span><span class='line'>│   ├── javascripts
+</span><span class='line'>│   │   ├── asides
+</span><span class='line'>│   │   └── libs
+</span><span class='line'>│   └── stylesheets
+</span><span class='line'>│       ├── bootstrap
+</span><span class='line'>│       └── syntax
+</span><span class='line'>├── sass
+</span><span class='line'>│   ├── base
+</span><span class='line'>│   ├── bootstrap
+</span><span class='line'>│   ├── custom
+</span><span class='line'>│   ├── partials
+</span><span class='line'>│   │   └── sidebar
+</span><span class='line'>│   └── syntax
+</span><span class='line'>└── <span class="nb">source</span> *github上origin服务器上的source分支,源码存放地
+</span><span class='line'>    ├── about *主页上about栏markdown文件
+</span><span class='line'>    ├── assets
+</span><span class='line'>    │   └── jwplayer
+</span><span class='line'>    │       └── glow
+</span><span class='line'>    │           ├── controlbar
+</span><span class='line'>    │           ├── display
+</span><span class='line'>    │           ├── dock
+</span><span class='line'>    │           ├── playlist
+</span><span class='line'>    │           └── sharing
+</span><span class='line'>    ├── blog
+</span><span class='line'>    │   └── archives
+</span><span class='line'>    ├── images *博客本地配图存放地
+</span><span class='line'>    ├── _includes
+</span><span class='line'>    │   ├── asides
+</span><span class='line'>    │   ├── custom
+</span><span class='line'>    │   │   └── asides
+</span><span class='line'>    │   └── post
+</span><span class='line'>    ├── javascripts
+</span><span class='line'>    │   ├── asides
+</span><span class='line'>    │   └── libs
+</span><span class='line'>    ├── _layouts
+</span><span class='line'>    ├── _posts *博客所有markdown源文件
+</span><span class='line'>    └── stylesheets
+</span><span class='line'>        ├── bootstrap
+</span><span class='line'>        └── syntax
+</span></code></pre></td></tr></table></div></figure>
+
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -285,6 +518,10 @@ sudo apt-get install chmsee
     <li class="nav-header"> 最近</li>
     
       <li class="post">
+        <a href="/blog/2012/12/04/lian-shang-linuxde-di-%5B%3F%5D-nian/">恋上linux的第一年</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2012/09/06/mysqlxue-xi-bi-ji-1/">MySQL note 1</a>
       </li>
     
@@ -300,16 +537,12 @@ sudo apt-get install chmsee
         <a href="/blog/2012/07/27/%3C%3Czhi-ming-mo-zhu-%3E%3E%2Cji-zhu-shu-jia/"><<致命魔术>>，技术暑假</a>
       </li>
     
-      <li class="post">
-        <a href="/blog/2012/07/17/yong-sheng-huo-de-jian-qiao-da-zi-ji-de-ming-ling-xing/">用生活的键敲打自己的命令行</a>
-      </li>
-    
   </ul>
 </section>
 <section class="well">
 <ul id="recent_posts" class="nav nav-list">
 <li class="nav-header"> 分类</li>
-	<li class="post"><li><a href='/blog/categories/c-c-'>c/c++ (2)</a></li><li><a href='/blog/categories/linux'>linux (4)</a></li><li><a href='/blog/categories/mysql'>MySQL (1)</a></li><li><a href='/blog/categories/python'>python (1)</a></li><li><a href='/blog/categories/thoughts'>thoughts (3)</a></li><li><a href='/blog/categories/vim'>vim (1)</a></li><li><a href='/blog/categories/web'>web (2)</a></li></li>
+	<li class="post"><li><a href='/blog/categories/c-c-'>c/c++ (2)</a></li><li><a href='/blog/categories/linux'>linux (5)</a></li><li><a href='/blog/categories/mysql'>MySQL (1)</a></li><li><a href='/blog/categories/python'>python (1)</a></li><li><a href='/blog/categories/thoughts'>thoughts (4)</a></li><li><a href='/blog/categories/vim'>vim (1)</a></li><li><a href='/blog/categories/web'>web (2)</a></li></li>
 </ul>
 </section>
 <iframe width="100%" height="550" class="share_self"  frameborder="0" scrolling="no" src="http://widget.weibo.com/weiboshow/index.php?language=&width=0&height=550&fansRow=2&ptype=1&speed=0&skin=1&isTitle=1&noborder=1&isWeibo=1&isFans=1&uid=1957020914&verifier=9e0cf85c&dpc=1"></iframe>

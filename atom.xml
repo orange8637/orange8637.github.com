@@ -4,7 +4,7 @@
   <title><![CDATA[SYSU-pineapple's blog]]></title>
   <link href="http://orange8637.github.com/atom.xml" rel="self"/>
   <link href="http://orange8637.github.com/"/>
-  <updated>2012-09-06T20:29:43+08:00</updated>
+  <updated>2012-12-04T14:37:03+08:00</updated>
   <id>http://orange8637.github.com/</id>
   <author>
     <name><![CDATA[姜晨]]></name>
@@ -12,6 +12,15 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[恋上linux的第一年]]></title>
+    <link href="http://orange8637.github.com/blog/2012/12/04/lian-shang-linuxde-di-%5B%3F%5D-nian/"/>
+    <updated>2012-12-04T12:28:00+08:00</updated>
+    <id>http://orange8637.github.com/blog/2012/12/04/lian-shang-linuxde-di-[?]-nian</id>
+    <content type="html"><![CDATA[<blockquote><p>&#8220;Among thousands of people, you meet those you&#8217;ve met.Through thousands of years, with the boundlessness of time, you happen to meet them, neither earlier nor a bit too late.&#8221;</p></blockquote>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[MySQL note 1]]></title>
